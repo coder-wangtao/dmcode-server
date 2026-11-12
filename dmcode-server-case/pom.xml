@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.wangtao</groupId>
+        <artifactId>dmcode-server</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <artifactId>dmcode-server-case</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wangtao</groupId>
+            <artifactId>dmcode-server-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wangtao</groupId>
+            <artifactId>dmcode-server-domain</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- 设计模式框架 -->
+        <dependency>
+            <groupId>cn.bugstack.wrench</groupId>
+            <artifactId>xfg-wrench-starter-design-framework</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--
+                注：3.3.0-springframework-4.0 版本的 xfg-wrench-starter-design-framework
+                已不再 shade slf4j/logback（3.0.0 才是 shade jar，曾与 Spring Boot 4 的
+                slf4j 2.x + logback 1.5.x 冲突），因此无需再做解压剔除重打包的
+                filtered-jar 处理，测试 classpath 直接使用原始依赖即可。
+            -->
+        </plugins>
+    </build>
+
+</project>

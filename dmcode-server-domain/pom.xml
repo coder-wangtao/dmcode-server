@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.wangtao</groupId>
+        <artifactId>dmcode-server</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <artifactId>dmcode-server-domain</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.bugstack.wrench</groupId>
+            <artifactId>xfg-wrench-starter-design-framework</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-openai</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.openai</groupId>
+            <artifactId>openai-java-client-okhttp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-mcp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.modelcontextprotocol.sdk</groupId>
+            <artifactId>mcp-json-jackson3</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.adk</groupId>
+            <artifactId>google-adk</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.adk</groupId>
+            <artifactId>google-adk-spring-ai</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springaicommunity</groupId>
+            <artifactId>spring-ai-agent-utils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- 系统模块 -->
+        <dependency>
+            <groupId>com.wangtao</groupId>
+            <artifactId>dmcode-server-types</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!-- JSch for SSH connections -->
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.54</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>ai-agent-scaffold-lite-domain</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <compilerVersion>${java.version}</compilerVersion>
+                </configuration>
+            </plugin>
+            <!--
+                测试 classpath 修复：xfg-wrench-starter-design-framework-3.0.0.jar 是 shade jar，
+                内含 slf4j 1.x（LoggerFactory/StaticLoggerBinder）+ 整套 logback classic 1.x
+                （含旧签名 ch.qos.logback.classic.spi.Configurator）。它在 test-classpath 位置 1，
+                与 Spring Boot 3.4 自带的 slf4j 2.x / logback 1.5.x 冲突：测试加载 @Slf4j 类时
+                LoggerFactory 走老 StaticLoggerBinder 路径 → ServiceLoader 加载
+                RootLogLevelConfigurator（按 logback 1.5 新签名编译）→ 与 wrench 内 1.x 旧接口
+                签名不匹配 → AbstractMethodError。
+                additionalClasspathElements 只会追加 jar，无法覆盖 shade 类，故改用
+                classpathDependencyExcludes 在测试运行期排除整个 wrench jar。
+                测试代码只测 ADK 回调过滤逻辑，不依赖 wrench 类，编译期仍保留 wrench 依赖。
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <classpathDependencyExcludes>
+                        <classpathDependencyExclude>cn.bugstack.wrench:xfg-wrench-starter-design-framework</classpathDependencyExclude>
+                    </classpathDependencyExcludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
