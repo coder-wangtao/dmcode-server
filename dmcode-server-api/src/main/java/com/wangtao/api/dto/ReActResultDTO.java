@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 /**
  * ReAct 执行结果 DTO
  *
- * @author xiaofuge bugstack.cn @小傅哥
- * 2026/5/4
+ * @author wt
+ * 
  */
 @Data
 @Builder

@@ -49,6 +49,7 @@ public class ModelConfigController {
     @PostMapping("save")
     public Response<ModelConfigResponseDTO> save(@RequestBody ModelConfigRequestDTO requestDTO) {
         try {
+            //新增/更新模型
             ModelConfigEntity saved = modelConfigService.save(toEntity(requestDTO));
             dynamicAgentRegistry.evict(saved.getId());
             userModelChatModelFactory.evict(saved.getId());

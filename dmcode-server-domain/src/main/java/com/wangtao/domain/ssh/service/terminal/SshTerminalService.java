@@ -15,7 +15,6 @@ import java.util.concurrent.ConcurrentHashMap;
  * SSH终端领域服务实现
  * 遵循单一职责原则，将终端会话管理委托给基础设施层
  *
- * @author waissh dev
  */
 @Slf4j
 @Service

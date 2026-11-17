@@ -34,6 +34,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/api/v1/ssh/file")
 @CrossOrigin(origins = "*")
+// connectionId => ssh文件操作
 public class SshFileController implements ISshFileService {
 
     @Resource

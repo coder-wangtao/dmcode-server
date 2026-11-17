@@ -32,12 +32,12 @@ import java.util.Set;
  * <p>防护措施：路径规范化、拒绝符号链接逃逸、目录条目/深度/文件大小上限、
  * 二进制内容不回传（走 /fs/raw）。
  *
- * @author walissh dev
- * 2026/10/7
+ * @author wt
  */
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/fs")
+//让前端 Web 控制台能够访问后端服务器上的本地文件系统，实现目录浏览、文件列表展示、文本文件读取、图片预览和文件下载。
 public class WebFsController {
 
     /** 目录树最大深度 */
@@ -64,7 +64,7 @@ public class WebFsController {
             Map.entry("pdf", "application/pdf"));
 
     // ═══════════════ 目录树 ═══════════════
-
+    //获取目录树
     @GetMapping("/tree")
     public Map<String, Object> tree(@RequestParam("path") String path,
                                     @RequestParam(value = "depth", defaultValue = "2") int depth) {
@@ -89,7 +89,7 @@ public class WebFsController {
         }
         return resp;
     }
-
+    //它不递归，只读取当前目录下的直接子项。
     @GetMapping("/list")
     public Map<String, Object> list(@RequestParam(value = "path", required = false) String path) {
         Map<String, Object> resp = new HashMap<>();
@@ -122,7 +122,7 @@ public class WebFsController {
     }
 
     // ═══════════════ 文件内容 ═══════════════
-
+    //对文件
     @GetMapping("/file")
     public Map<String, Object> file(@RequestParam("path") String path) {
         Map<String, Object> resp = new HashMap<>();
@@ -163,6 +163,7 @@ public class WebFsController {
     }
 
     /** 原始字节（图片预览 / 二进制下载） */
+    //这是负责图片预览和二进制文件下载的接口。
     @GetMapping("/raw")
     public org.springframework.http.ResponseEntity<byte[]> raw(
             @RequestParam("path") String path,

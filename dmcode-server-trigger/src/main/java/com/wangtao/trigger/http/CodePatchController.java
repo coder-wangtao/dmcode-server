@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/patch")
+//是 Agent 改过一个文件后留下的一条审计记录。一次改文件就记一条，用来查看改了什么、事后回滚或确认。
 public class CodePatchController {
 
     @Resource

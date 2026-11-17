@@ -14,7 +14,6 @@ import java.util.UUID;
 /**
  * SSH连接领域服务实现
  *
- * @author waissh dev
  */
 @Slf4j
 @Service

@@ -8,7 +8,6 @@ import java.util.List;
 /**
  * SSH连接仓储接口（领域层定义，基础设施层实现）
  *
- * @author waissh dev
  */
 public interface ISshConnectionRepository {
 

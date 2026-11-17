@@ -6,7 +6,6 @@ import lombok.Getter;
 /**
  * SSH认证类型枚举
  *
- * @author waissh dev
  */
 @Getter
 @AllArgsConstructor

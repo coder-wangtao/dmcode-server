@@ -18,7 +18,6 @@ import java.util.concurrent.ConcurrentHashMap;
  * <p>原有 bind_terminal / unbind_terminal / query_binding API
  * 已迁移到 /api/v1/bind_terminal 等路径，本控制器保留仅做兼容过渡。
  * 
- * @author waissh dev
  * @deprecated 功能已合并到 AgentServiceController，使用 /api/v1/ 下的绑定接口
  */
 @Slf4j

@@ -122,6 +122,7 @@ public class TerminalSessionPort implements ITerminalSessionPort {
     private static final int WRITE_MAX_RETRIES = 2;
 
     /** Write with retry on I/O failure */
+    //向远程终端发送命令
     @Override
     public void write(String sessionId, String command) {
         OutputStream out = outputStreams.get(sessionId);
@@ -155,6 +156,7 @@ public class TerminalSessionPort implements ITerminalSessionPort {
         throw new RuntimeException("写入终端失败: " + lastError.getMessage(), lastError);
     }
 
+    //前端获取终端输出
     @Override
     public String read(String sessionId) {
         StringBuilder buffer = outputBuffers.get(sessionId);
@@ -187,6 +189,7 @@ public class TerminalSessionPort implements ITerminalSessionPort {
         }
     }
 
+    //开启或关闭 Agent 捕获
     @Override
     public void setAgentCapture(String sessionId, boolean capture) {
         StringBuilder agentBuffer = agentBuffers.get(sessionId);
@@ -202,6 +205,7 @@ public class TerminalSessionPort implements ITerminalSessionPort {
         log.debug("Agent 捕获模式: sessionId={}, capture={}", sessionId, capture);
     }
 
+    //Agent 读取终端输出
     @Override
     public String readAgentBuffer(String sessionId) {
         StringBuilder agentBuffer = agentBuffers.get(sessionId);
@@ -218,6 +222,7 @@ public class TerminalSessionPort implements ITerminalSessionPort {
         }
     }
 
+    //调整终端窗口大小
     @Override
     public void resize(String sessionId, int cols, int rows) {
         ChannelShell channel = channels.get(sessionId);
@@ -234,6 +239,7 @@ public class TerminalSessionPort implements ITerminalSessionPort {
         }
     }
 
+    //关闭终端
     @Override
     public void closeSession(String sessionId) {
         log.info("关闭终端会话 sessionId={}", sessionId);
@@ -253,6 +259,7 @@ public class TerminalSessionPort implements ITerminalSessionPort {
      * SocketTimeoutException 时继续循环（不是真正的断连），
      * 只有 EOF（-1）或真正的 IOException 才退出
      */
+    //持续监听远程 Linux Shell 的输出，并将数据写入两个缓冲区。
     private void startOutputReader(String sessionId, InputStream in) {
         readerAlive.put(sessionId, true);
         Thread reader = new Thread(() -> {

@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 /**
  * 终端写入请求（原始输入，逐字节发送到 Shell）
  *
- * @author waissh dev
+ * @author wt
  */
 @Data
 @Builder

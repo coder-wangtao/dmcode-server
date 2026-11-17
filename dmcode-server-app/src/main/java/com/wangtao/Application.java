@@ -34,7 +34,7 @@ public class Application {
                 || java.util.Arrays.stream(args).anyMatch(arg -> arg.contains("spring.profiles.active=local"));
         if (local) {
             try {
-                Files.createDirectories(Path.of(System.getProperty("user.home"), ".walicode", "data"));
+                Files.createDirectories(Path.of(System.getProperty("user.home"), ".dmcode", "data"));
             } catch (Exception e) {
                 throw new IllegalStateException("无法创建本地数据目录", e);
             }

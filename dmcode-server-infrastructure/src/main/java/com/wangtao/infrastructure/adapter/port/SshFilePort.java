@@ -36,6 +36,8 @@ public class SshFilePort implements ISshFilePort {
     private static final long MAX_CLASS_PARSE_BYTES = 16L * 1024 * 1024;
     private static final String ROOT = "/";
 
+    //这是 SSH 会话管理组件。
+    //它负责获取已经建立的 SSH Session。
     @Resource
     private SshSessionPort sshSessionPort;
 
@@ -43,6 +45,7 @@ public class SshFilePort implements ISshFilePort {
 
     // ==================== 查询 ====================
 
+    //获取远程服务器指定目录下的文件和文件夹。
     @Override
     public SshFileTreeEntity listDirectory(String connectionId, String path) {
         Session session = requireSession(connectionId);
@@ -92,6 +95,7 @@ public class SshFilePort implements ISshFilePort {
     }
 
     /** 支持 offset + limit 的大文件分片读取 */
+    //文件读取功能
     @Override
     public SshFileContentEntity readFile(String connectionId, String path, Long offset, Integer limit) {
         Session session = requireSession(connectionId);
@@ -141,6 +145,7 @@ public class SshFilePort implements ISshFilePort {
 
     // ==================== 写操作：优先 SFTP，失败自动 sudo ====================
 
+    //创建文件
     @Override
     public void createFile(String connectionId, String path, boolean useSudo) {
         Session session = requireSession(connectionId);
@@ -163,6 +168,7 @@ public class SshFilePort implements ISshFilePort {
         log.info("创建文件: connectionId={}, path={}, sudo={}", connectionId, normalizedPath, useSudo);
     }
 
+    //创建文件夹
     @Override
     public void createDirectory(String connectionId, String path, boolean useSudo) {
         Session session = requireSession(connectionId);
@@ -185,6 +191,7 @@ public class SshFilePort implements ISshFilePort {
         log.info("创建目录: connectionId={}, path={}, sudo={}", connectionId, normalizedPath, useSudo);
     }
 
+    //重命名
     @Override
     public void rename(String connectionId, String oldPath, String newPath, boolean useSudo) {
         Session session = requireSession(connectionId);
@@ -208,6 +215,7 @@ public class SshFilePort implements ISshFilePort {
         log.info("重命名: connectionId={}, old={}, new={}, sudo={}", connectionId, nOld, nNew, useSudo);
     }
 
+    //删除文件
     @Override
     public void delete(String connectionId, String path, boolean useSudo) {
         Session session = requireSession(connectionId);
@@ -235,6 +243,7 @@ public class SshFilePort implements ISshFilePort {
         log.info("删除: connectionId={}, path={}, sudo={}", connectionId, normalizedPath, useSudo);
     }
 
+    //保存文件
     @Override
     public void saveFile(String connectionId, String path, String content, boolean useSudo) {
         Session session = requireSession(connectionId);
@@ -258,6 +267,7 @@ public class SshFilePort implements ISshFilePort {
         log.info("保存文件: connectionId={}, path={}, sudo={}", connectionId, normalizedPath, useSudo);
     }
 
+    //上传文件
     @Override
     public void uploadFile(String connectionId, String path, InputStream inputStream) {
         Session session = requireSession(connectionId);
@@ -271,6 +281,7 @@ public class SshFilePort implements ISshFilePort {
         }
     }
 
+    //下载文件
     @Override
     public void downloadFile(String connectionId, String path, OutputStream outputStream) {
         Session session = requireSession(connectionId);
@@ -414,6 +425,7 @@ public class SshFilePort implements ISshFilePort {
 
     private static String shellEscape(String path) { return "'" + path.replace("'", "'\\''") + "'"; }
 
+    //因为 SFTP 的 rmdir 不能直接删除非空目录，所以代码采用递归删除。
     private void deleteDirectory(ChannelSftp sftp, String path) throws SftpException {
         @SuppressWarnings("unchecked") Vector<ChannelSftp.LsEntry> list = sftp.ls(path);
         for (ChannelSftp.LsEntry entry : list) {

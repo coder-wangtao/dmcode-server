@@ -16,8 +16,7 @@ import java.util.List;
  * <p>对应参考项目 WaLiCode 的 Task Breakdown 模式：
  * 检测复杂任务 → 提案拆解 → 用户确认 → 顺序执行
  *
- * @author walissh dev
- * 2026/6/19
+ * @author wt
  */
 @Data
 @Builder

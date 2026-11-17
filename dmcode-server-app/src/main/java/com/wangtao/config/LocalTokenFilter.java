@@ -19,11 +19,14 @@ import java.security.MessageDigest;
 @Component
 @Order(-100)
 @Profile("local")
+//当项目运行在 local 环境时，所有 /api/** 业务接口都必须携带正确的 Bearer Token 才能访问；
+// 而静态页面、前端资源和 /webui/** 接口不需要经过这个 Token 校验。
 public class LocalTokenFilter extends OncePerRequestFilter {
 
     @Resource(name = "localRuntimeToken")
     private String runtimeToken;
 
+    //这个方法决定当前请求是否跳过过滤器。
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
         if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
@@ -41,6 +44,7 @@ public class LocalTokenFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
         String authorization = request.getHeader("Authorization");
         if (authorization != null && constantTimeEquals(authorization, "Bearer " + runtimeToken)) {
+            //认证成功后继续执行
             filterChain.doFilter(request, response);
             return;
         }

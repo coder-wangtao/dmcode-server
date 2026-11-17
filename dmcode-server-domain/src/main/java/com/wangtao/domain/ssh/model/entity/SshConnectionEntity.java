@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 /**
  * SSH连接配置实体
  *
- * @author waissh dev
  */
 @Data
 @Builder

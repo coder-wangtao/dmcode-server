@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 /**
  * SSH连接响应DTO
  *
- * @author waissh dev
+ * @author wt
  */
 @Data
 @Builder

@@ -6,7 +6,6 @@ import com.wangtao.domain.ssh.model.entity.TerminalSessionEntity;
  * SSH终端领域服务接口
  * 定义终端会话的核心业务操作
  *
- * @author waissh dev
  */
 public interface ISshTerminalService {
 

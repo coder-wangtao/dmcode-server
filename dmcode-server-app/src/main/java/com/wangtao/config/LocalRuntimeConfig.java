@@ -19,7 +19,7 @@ import java.util.HexFormat;
 @Profile("local")
 public class LocalRuntimeConfig {
 
-    @Value("${walicode.local.token:}")
+    @Value("${dmcode.local.token:}")
     private String configuredToken;
 
     @Bean("localRuntimeToken")
@@ -47,12 +47,16 @@ public class LocalRuntimeConfig {
         };
     }
 
+    //监听 Spring Boot 启动完成事件
+    //当 Spring Boot 后端完全启动成功后，获取后端运行信息，并通过标准输出（stdout）向外部程序发送一条 JSON 消息。
+    //那么这段代码实际上就是 Java 后端向 Tauri 发送的一个 启动成功通知（Ready Handshake）。
     @EventListener(ApplicationReadyEvent.class)
     public void publishReadyEvent(ApplicationReadyEvent event) {
         String port = System.getProperty("local.server.port", "0");
         if ("0".equals(port) && event.getApplicationContext() instanceof WebServerApplicationContext webContext) {
             port = String.valueOf(webContext.getWebServer().getPort());
         }
+        //获取当前JAVA进程 PID
         String pid = String.valueOf(ProcessHandle.current().pid());
         String token = localRuntimeToken();
         String payload = "{\"event\":\"ready\",\"port\":" + port

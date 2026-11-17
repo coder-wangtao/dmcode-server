@@ -4,7 +4,6 @@ package com.wangtao.domain.ssh.adapter.port;
  * 终端会话服务接口
  * 负责管理 SSH 终端会话，包括打开/写入/读取/调整大小/关闭会话
  *
- * @author waissh dev
  */
 public interface ITerminalSessionPort {
 

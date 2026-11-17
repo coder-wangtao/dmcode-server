@@ -20,6 +20,7 @@ import java.util.Map;
  * 供桌面端本地文件预览使用：前端读取本地字节后 base64 上传，
  * 服务端解析为结构化文本视图返回。当前支持 .class 字节码文件。
  */
+//这段代码是一个基于 Spring Boot 的通用文件解析接口，主要用于桌面端（例如 JavaFX、Electron 等）预览本地 .class 文件。
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/file")
@@ -29,6 +30,7 @@ public class FileParseController {
     /** 解析允许的最大字节数（base64 解码前约 21MB） */
     private static final int MAX_PARSE_BYTES = 16 * 1024 * 1024;
 
+    //前端读取本地 .class 文件 → 转换成 Base64 → 发送给后端 → 后端解析字节码 → 返回可读的 Java 类结构文本。
     @RequestMapping(value = "parse-class", method = RequestMethod.POST)
     public Response<SshFileContentResponseDTO> parseClass(@RequestBody Map<String, String> body) {
         String name = body.getOrDefault("name", "unknown.class");

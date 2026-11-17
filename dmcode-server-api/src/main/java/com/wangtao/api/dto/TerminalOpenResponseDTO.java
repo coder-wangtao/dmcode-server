@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 /**
  * 打开终端会话响应
  *
- * @author waissh dev
+ * @author wt
  */
 @Data
 @Builder

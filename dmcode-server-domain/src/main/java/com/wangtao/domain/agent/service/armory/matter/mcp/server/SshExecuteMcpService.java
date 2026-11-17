@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
  * SSH 命令执行 MCP 工具
  * 为智能体提供在 SSH 终端执行命令的能力
  * 
- * @author waissh dev
+ * @author wt
  */
 @Slf4j
 @Service

@@ -21,7 +21,6 @@ import java.util.stream.Collectors;
 /**
  * SSH连接管理 HTTP控制器
  *
- * @author waissh dev
  */
 @Slf4j
 @RestController
@@ -188,6 +187,7 @@ public class SshConnectionController implements ISshConnectionService {
         }
     }
 
+    //TODO: 重要逻辑 建立链接
     @RequestMapping(value = "connect", method = RequestMethod.POST)
     @Override
     public Response<Void> connect(@RequestParam("connectionId") String connectionId) {

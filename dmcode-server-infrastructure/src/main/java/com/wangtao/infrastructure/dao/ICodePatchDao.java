@@ -12,5 +12,6 @@ public interface ICodePatchDao {
     CodePatchPO queryById(String patchId);
     List<CodePatchPO> queryByRunId(String runId);
     List<CodePatchPO> queryBySessionId(String sessionId, int limit);
-    List<CodePatchPO> queryUnapprovedBySessionId(String sessionId, int limit);
+    List<CodePatchPO>
+    queryUnapprovedBySessionId(String sessionId, int limit);
 }

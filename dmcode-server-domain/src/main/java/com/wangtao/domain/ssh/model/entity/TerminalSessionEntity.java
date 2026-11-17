@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
  * 终端会话实体
  * 聚合根，管理一个 SSH 终端会话的生命周期
  *
- * @author waissh dev
  */
 @Data
 @Builder

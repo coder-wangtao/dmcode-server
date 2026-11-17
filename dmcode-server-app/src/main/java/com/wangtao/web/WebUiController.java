@@ -19,8 +19,7 @@ import java.util.Map;
  * <p>安全说明：本接口<strong>不声明 @CrossOrigin</strong>，跨源页面无法读取响应体；
  * dev profile（无 token 校验）返回空 token。
  *
- * @author walissh dev
- * 2026/10/7
+ * @author wt
  */
 @Slf4j
 @RestController
@@ -30,6 +29,7 @@ public class WebUiController {
     /**
      * local profile 下的运行时 token（LocalRuntimeConfig 提供）；dev 等其他 profile 下为 null。
      */
+    //当用户访问服务端内置的 Web 页面时，自动获取运行时 Token，让前端 JavaScript 能够自动完成身份认证，而不需要用户手动填写 Token。
     @Autowired(required = false)
     @Qualifier("localRuntimeToken")
     private String localRuntimeToken;

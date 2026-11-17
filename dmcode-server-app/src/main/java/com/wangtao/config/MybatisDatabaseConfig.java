@@ -28,6 +28,7 @@ public class MybatisDatabaseConfig {
             javax.sql.DataSource dataSource,
             DatabaseIdProvider databaseIdProvider) {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
+        //将 Spring 注入的数据源交给 MyBatis。
         factoryBean.setDataSource(dataSource);
         org.springframework.core.io.support.PathMatchingResourcePatternResolver resolver =
                 new org.springframework.core.io.support.PathMatchingResourcePatternResolver();

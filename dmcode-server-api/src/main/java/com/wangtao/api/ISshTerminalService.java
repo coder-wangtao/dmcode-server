@@ -6,7 +6,7 @@ import com.wangtao.api.response.Response;
 /**
  * SSH终端服务远程接口
  *
- * @author waissh dev
+ * @author wt
  */
 public interface ISshTerminalService {
 

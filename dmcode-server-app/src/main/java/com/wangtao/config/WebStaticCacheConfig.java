@@ -14,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * - index.html / 模板入口：no-cache，每次都向服务端校验（304 走 Last-Modified，开销极小）
  * - 其他静态资源：服务端不发长缓存头，交给页面的 ?v= 时间戳破缓存
  */
+//配置 Spring Boot 项目中静态资源的 HTTP 缓存策略，重点是不让浏览器直接使用缓存的旧版 index.html，而是每次访问时向服务器重新验证页面是否更新。
 @Configuration
 public class WebStaticCacheConfig implements WebMvcConfigurer {
 

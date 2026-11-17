@@ -8,7 +8,6 @@ import java.util.List;
 /**
  * SSH连接领域服务接口
  *
- * @author waissh dev
  */
 public interface ISshConnectionDomainService {
 

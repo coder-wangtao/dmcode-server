@@ -13,8 +13,7 @@ import jakarta.annotation.Resource;
 /**
  * SSH终端操作 HTTP 控制器
  * 提供终端会话的打开、原始I/O读写、大小调整、关闭等能力
- *
- * @author waissh dev
+ * connectionId  <==> ssh terminal操作
  */
 @Slf4j
 @RestController
@@ -25,11 +24,11 @@ public class SshTerminalController {
     @Resource
     private ISshTerminalService sshTerminalDomainService;
 
+    //打开的是请求里 connectionId 对应的那台远程 SSH 主机上的交互式 Shell，
     @RequestMapping(value = "open", method = RequestMethod.POST)
     public Response<TerminalOpenResponseDTO> openTerminal(@RequestBody TerminalOpenRequestDTO requestDTO) {
         try {
             log.info("打开终端会话 connectionId={}", requestDTO.getConnectionId());
-
             int cols = requestDTO.getCols() != null ? requestDTO.getCols() : 120;
             int rows = requestDTO.getRows() != null ? requestDTO.getRows() : 24;
 
@@ -87,7 +86,7 @@ public class SshTerminalController {
 
         return output;
     }
-
+    //是在已经打开的那台远程 Shell 里执行一条命令，然后把输出一次性返回。
     @RequestMapping(value = "exec", method = RequestMethod.POST)
     public Response<TerminalExecResponseDTO> execCommand(@RequestBody TerminalExecRequestDTO requestDTO) {
         try {
@@ -117,7 +116,7 @@ public class SshTerminalController {
                     .build();
         }
     }
-
+    //写进已经打开的远程 Shell，写完就返回，不等命令跑完，也不把输出带回来。
     @RequestMapping(value = "write", method = RequestMethod.POST)
     public Response<Void> writeToTerminal(@RequestBody TerminalWriteRequestDTO requestDTO) {
         try {
@@ -141,6 +140,7 @@ public class SshTerminalController {
         }
     }
 
+    //把远程 Shell 已经吐出来、还没被前端拿走的输出一次读走。
     @RequestMapping(value = "read", method = RequestMethod.GET)
     public Response<TerminalReadResponseDTO> readFromTerminal(@RequestParam("sessionId") String sessionId) {
         try {
@@ -167,7 +167,7 @@ public class SshTerminalController {
                     .build();
         }
     }
-
+    //调整终端窗口大小
     @RequestMapping(value = "resize", method = RequestMethod.POST)
     public Response<Void> resizeTerminal(@RequestBody TerminalResizeRequestDTO requestDTO) {
         try {

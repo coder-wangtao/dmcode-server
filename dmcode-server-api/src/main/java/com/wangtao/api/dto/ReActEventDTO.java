@@ -5,13 +5,13 @@ import lombok.Data;
 /**
  * ReAct 对话事件 DTO
  *
- * <p>对应参考项目 WaLiCode 的 streamingAgent.ts 的回调事件结构
+ * <p>对应参考项目 的 streamingAgent.ts 的回调事件结构
  * <p>扩展事件：task_breakdown（任务拆解提案）、task_progress（子任务进度）
  *
- * <p>对应 WaLiCode 的 streamingAgent.ts 的回调事件结构
+ * <p>对应 的 streamingAgent.ts 的回调事件结构
  *
- * @author xiaofuge bugstack.cn @小傅哥
- * 2026/5/4
+ * @author wt
+ *
  */
 @Data
 public class ReActEventDTO {

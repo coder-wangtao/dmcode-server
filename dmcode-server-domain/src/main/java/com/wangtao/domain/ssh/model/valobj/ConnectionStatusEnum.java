@@ -6,7 +6,6 @@ import lombok.Getter;
 /**
  * SSH连接状态枚举
  *
- * @author waissh dev
  */
 @Getter
 @AllArgsConstructor

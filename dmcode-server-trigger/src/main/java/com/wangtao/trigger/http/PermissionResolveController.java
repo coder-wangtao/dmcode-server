@@ -21,6 +21,8 @@ import jakarta.annotation.Resource;
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/permission")
+//TODO:
+//接收前端权限弹窗的选择，唤醒正在阻塞等待的工具调用线程。
 public class PermissionResolveController {
 
     @Resource
