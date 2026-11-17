@@ -1,0 +1,45 @@
+server:
+  address: 127.0.0.1
+  port: 0
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+  config:
+    import:
+      - classpath:agent/code-agent.yml
+  datasource:
+    url: jdbc:h2:file:${user.home}/.dmcode/data/dmcode;MODE=MySQL;AUTO_SERVER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema/dmcode-h2.sql
+
+dmcode:
+  local:
+    token: ${DAMAOCODE_LOCAL_TOKEN:}
+    workspace: ${DAMAOCODE_WORKSPACE:${user.home}}
+
+thread:
+  pool:
+    executor:
+      config:
+        core-pool-size: 6
+        max-pool-size: 16
+        keep-alive-time: 5000
+        block-queue-size: 2000
+        policy: CallerRunsPolicy
+
+mybatis:
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+  config-location: classpath:/mybatis/config/mybatis-config.xml
+
+logging:
+  level:
+    root: info
+  config: classpath:logback-spring.xml
