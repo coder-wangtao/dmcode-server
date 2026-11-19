@@ -16,8 +16,7 @@ import java.util.Map;
  * 2. 调用 AI 生成拆解方案
  * 3. 返回拆解结果供前端展示和用户确认
  *
- * @author walissh dev
- * 2026/6/19
+ * 
  */
 public interface ITaskBreakdownService {
 

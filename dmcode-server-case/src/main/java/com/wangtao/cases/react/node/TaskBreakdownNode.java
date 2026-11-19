@@ -28,7 +28,7 @@ import java.util.List;
  * 3. 通过 SSE 发送 task_breakdown 事件给前端
  * 4. 将拆解方案注入上下文，供后续 AiCallNode 使用
  *
- * @author walissh dev
+ *
  * 2026/6/19
  */
 @Slf4j

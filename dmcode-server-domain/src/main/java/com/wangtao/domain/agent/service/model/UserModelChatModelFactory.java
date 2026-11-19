@@ -27,8 +27,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * <p>构建的 ChatModel 带有连接/读取超时，且禁用内部重试 —— 避免 LLM 网关不可达时
  * 触发底层 RetryTemplate 长时间重试导致用户侧"长时间无响应"。
  *
- * @author walissh dev
- * 2026/9/28
+ *
+
  */
 @Slf4j
 @Service

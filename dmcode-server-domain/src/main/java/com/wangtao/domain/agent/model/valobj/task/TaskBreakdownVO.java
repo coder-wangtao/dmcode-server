@@ -10,8 +10,7 @@ import java.util.List;
 /**
  * 任务拆解值对象（domain 层内部使用）
  *
- * @author walissh dev
- * 2026/6/19
+ * 
  */
 @Data
 @Builder

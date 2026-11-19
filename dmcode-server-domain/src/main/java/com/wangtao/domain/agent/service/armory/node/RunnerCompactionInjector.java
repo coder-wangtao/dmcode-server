@@ -28,7 +28,6 @@ import java.util.Optional;
  * - eventRetentionSize: 压缩后保留最近 N 条事件
  *
  * @author walicode-java
- * 2026/6/21
  */
 @Slf4j
 public class RunnerCompactionInjector {

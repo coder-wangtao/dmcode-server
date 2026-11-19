@@ -34,7 +34,6 @@ import java.util.concurrent.ConcurrentHashMap;
  * - 结果通过 tool result 返回给父对话
  *
  * @author 教学版-DaMaoCode
- * 2026/6/22
  */
 @Slf4j
 @Component

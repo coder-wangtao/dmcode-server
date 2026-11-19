@@ -24,7 +24,6 @@ import java.util.regex.Pattern;
  * 3. 工具错误（tool_error）也触发记忆写入
  *
  * @author 教学版-DaMaoCode
- * 2026/6/26
  */
 @Slf4j
 @Component

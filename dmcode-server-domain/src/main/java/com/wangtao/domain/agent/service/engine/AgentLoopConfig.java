@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
  * <p>由 RootNode 根据 agent YAML 配置 + 意图分级构建
  *
  * @author 教学版-DaMaoCode
- * 2026/6/22
  */
 @Data
 @Builder

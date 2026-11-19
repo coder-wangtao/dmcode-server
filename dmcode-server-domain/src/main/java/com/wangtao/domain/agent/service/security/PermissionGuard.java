@@ -27,7 +27,6 @@ import java.util.regex.Pattern;
  * 5. 断路器层：同一会话连续触发安全拒绝 → 自动降级
  *
  * @author 教学版-DaMaoCode
- * 2026/6/22
  */
 @Slf4j
 @Component

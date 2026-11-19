@@ -17,7 +17,7 @@ import java.util.Map;
  * <p>写入时机：AiCallNode 每轮绑定终端会话时调用 {@link #bind}；
  * 解绑时机：UserFeedbackNode 会话结束时调用 {@link #unbind}。
  *
- * @author walissh dev
+ * 
  */
 public final class SshTerminalSessionRegistry {
 

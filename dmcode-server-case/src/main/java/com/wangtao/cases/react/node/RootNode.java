@@ -31,8 +31,7 @@ import org.springframework.stereotype.Component;
  * RootNode → AiCallNode → ToolCallNode → ToolResultNode → LoopDecisionNode
  *                                                   ↑__________________|
  *
- * @author xiaofuge bugstack.cn @小傅哥
- * 2026/5/4 13:57
+ * 
  */
 @Slf4j
 @Component("reactRootNode")

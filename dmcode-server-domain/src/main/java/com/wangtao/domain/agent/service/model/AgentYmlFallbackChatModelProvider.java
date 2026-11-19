@@ -27,8 +27,7 @@ import java.time.Duration;
  * 1. 数据库模型配置（UserModelChatModelFactory，含启动时从智能体 yml 播种的"默认模型"）
  * 2. 智能体 yml 的 ai-api / chat-model 配置（本类）
  *
- * @author walissh dev
- * 2026/10/7
+ * 
  */
 @Slf4j
 @Service

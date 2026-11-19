@@ -33,8 +33,7 @@ import java.util.concurrent.TimeoutException;
  * <p>节点路由链：
  * RootNode → AiCallNode → ToolCallNode → (ToolResultNode) → [循环或完成]
  *
- * @author xiaofuge bugstack.cn @小傅哥
- * 2026/5/4 13:58
+ * 
  */
 @Slf4j
 public abstract class AbstractAIAgentReActSupport extends AbstractMultiThreadStrategyRouter<ChatRequestDTO, DefaultReActFactory.DynamicContext, ReActResultDTO> {

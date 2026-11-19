@@ -33,8 +33,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * UserFeedbackNode → 发送最终结果，完成 SSE
  * </pre>
  *
- * @author xiaofuge bugstack.cn @小傅哥
- * 2026/5/4 14:26
+ * 
  */
 public class DefaultReActFactory {
 

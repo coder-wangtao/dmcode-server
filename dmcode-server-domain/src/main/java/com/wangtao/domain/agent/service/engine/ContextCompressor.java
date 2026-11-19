@@ -35,7 +35,6 @@ import java.util.Map;
  * 注意：AI 摘要压缩（Level 3）需要 ChatClient 支持，Phase 2 实现
  *
  * @author 教学版-DaMaoCode
- * 2026/6/22
  */
 @Slf4j
 @Component

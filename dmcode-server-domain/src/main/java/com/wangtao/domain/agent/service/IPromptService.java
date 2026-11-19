@@ -11,8 +11,7 @@ import com.wangtao.domain.agent.model.valobj.prompt.TaskModeVO;
  * 封装动态 Prompt 构建、里程碑追踪、环境信息采集等能力，
  * 使 case 层仅依赖此接口，不直接接触 DynamicPromptBuilder / MilestoneTracker 等内部组件。
  *
- * @author xiaofuge bugstack.cn @小傅哥
- * 2026/5/5 22:16
+ * 
  */
 public interface IPromptService {
 

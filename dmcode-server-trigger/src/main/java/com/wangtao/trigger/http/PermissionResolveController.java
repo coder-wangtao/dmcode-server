@@ -16,7 +16,6 @@ import jakarta.annotation.Resource;
  * <p>后端接收结果，通过 PermissionConfirmManager 唤醒阻塞等待的 ToolCallNode 线程
  *
  * @author 教学版-DaMaoCode
- * 2026/6/22
  */
 @Slf4j
 @RestController

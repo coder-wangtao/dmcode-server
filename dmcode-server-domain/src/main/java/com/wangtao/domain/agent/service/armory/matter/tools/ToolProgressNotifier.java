@@ -16,7 +16,7 @@ import java.util.Map;
  * FunctionResponse 传递给 AiCallNode，通过 SSE 推送到前端，
  * 不再需要 side channel 推送，避免重复。
  *
- * @author walissh dev
+ * 
  */
 public interface ToolProgressNotifier {
 

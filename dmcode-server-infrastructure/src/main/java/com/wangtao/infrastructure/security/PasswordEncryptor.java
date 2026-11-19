@@ -20,8 +20,8 @@ public class PasswordEncryptor {
     private static final int GCM_IV_LENGTH = 12;
     private static final int GCM_TAG_LENGTH = 128;
 
-    /** 默认密钥（生产环境务必通过环境变量 WALISSH_SECRET_KEY 覆盖） */
-    private static final String DEFAULT_SECRET_KEY = "WaLiSSH2026SecretKey!!";
+    /** 默认密钥（生产环境务必通过环境变量 DAMAOSSH_SECRET_KEY 覆盖） */
+    private static final String DEFAULT_SECRET_KEY = "DaMaoSSH2026SecretKey!!";
 
     private final SecretKeySpec keySpec;
 
@@ -32,11 +32,11 @@ public class PasswordEncryptor {
     public PasswordEncryptor(String secretKey) {
         String key = secretKey;
         if (key == null || key.isBlank()) {
-            key = System.getenv("WALISSH_SECRET_KEY");
+            key = System.getenv("DAMAOSSH_SECRET_KEY");
         }
         if (key == null || key.isBlank()) {
             key = DEFAULT_SECRET_KEY;
-            log.warn("未配置 WALISSH_SECRET_KEY 环境变量，使用默认密钥，生产环境请务必配置！");
+            log.warn("未配置 DAMAOSSH_SECRET_KEY 环境变量，使用默认密钥，生产环境请务必配置！");
         }
         // 确保密钥长度为 32 字节（AES-256）
         byte[] keyBytes = padOrTrim(key.getBytes(StandardCharsets.UTF_8), 32);

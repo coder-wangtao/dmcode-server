@@ -13,7 +13,6 @@ import java.util.concurrent.ConcurrentHashMap;
  * PermissionResolveController（trigger 层）收到用户回写 → 唤醒
  *
  * @author 教学版-DaMaoCode
- * 2026/6/22
  */
 @Slf4j
 @Component

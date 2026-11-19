@@ -27,7 +27,7 @@ import java.util.Set;
  * <p>注意：此回调只影响「模型能看到的工具声明」，不影响已发出的 functionCall 的执行
  * ——模型凭历史幻觉调用被隐藏工具的情况由工具自身的错误返回兜底。
  *
- * @author walissh dev
+ * 
  */
 @Slf4j
 public final class SshTerminalToolFilter implements Callbacks.BeforeModelCallback {

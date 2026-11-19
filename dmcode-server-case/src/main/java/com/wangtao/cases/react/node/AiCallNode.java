@@ -43,7 +43,7 @@ import java.util.regex.Pattern;
  * 4. 如果有工具调用：存储到上下文，发送 SSE 事件，路由到 ToolCallNode
  * 5. 如果无工具调用：路由到 LoopDecisionNode
  *
- * <p>数据流说明（2026-06-25 修复）：
+ * <p>数据流说明（修复）：
  * <p>已关闭 Spring AI 自动工具执行（internalToolExecutionEnabled=false），
  * ADK Runner 自动执行工具，FunctionResponse 事件出现在事件流中。
  * AiCallNode 从 FunctionResponse 中提取完整工具结果并通过 SSE 推送到前端。
@@ -60,8 +60,7 @@ import java.util.regex.Pattern;
  *         └→ [无工具调用] LoopDecisionNode → UserFeedbackNode
  * </pre>
  *
- * @author xiaofuge bugstack.cn @小傅哥
- * 2026/5/4
+ * 
  */
 @Slf4j
 @Component("reactAiCallNode")

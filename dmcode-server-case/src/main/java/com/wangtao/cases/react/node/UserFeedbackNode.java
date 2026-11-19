@@ -24,8 +24,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter
  * - 通过 SSE 发送 done 事件通知前端
  * - 清理终端会话绑定
  *
- * @author xiaofuge bugstack.cn @小傅哥
- * 2026/5/4
+ * 
  */
 @Slf4j
 @Component("reactUserFeedbackNode")

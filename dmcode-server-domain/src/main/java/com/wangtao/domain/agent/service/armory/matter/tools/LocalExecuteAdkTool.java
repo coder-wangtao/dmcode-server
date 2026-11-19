@@ -28,7 +28,7 @@ import java.util.regex.Pattern;
  *   <li>Server 通过 CompletableFuture 阻塞等待结果</li>
  * </ul>
  *
- * @author walissh dev
+ * 
  */
 @Slf4j
 @Service

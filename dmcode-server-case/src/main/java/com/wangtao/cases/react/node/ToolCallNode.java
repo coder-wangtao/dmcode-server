@@ -50,8 +50,7 @@ import java.util.Map;
  *                     └→ UserFeedbackNode
  * </pre>
  *
- * @author xiaofuge bugstack.cn @小傅哥
- * 2026/5/4
+ * 
  */
 @Slf4j
 @Component("reactToolCallNode")

@@ -21,7 +21,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  * - 需要确认的工具 → 由 PermissionGuard 处理
  *
  * @author 教学版-DaMaoCode
- * 2026/6/22
  */
 @Slf4j
 @Component

@@ -19,8 +19,7 @@ import java.util.Map;
  * 组合 DynamicPromptBuilder、MilestoneTracker、IChatContextService，
  * 向 case 层提供统一的提示词领域能力。
  *
- * @author xiaofuge bugstack.cn @小傅哥
- * 2026/5/5 22:18
+ * 
  */
 @Slf4j
 @Service

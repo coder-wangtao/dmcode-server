@@ -34,7 +34,7 @@ import java.util.stream.Stream;
  *
  * <p>通过 terminalSessionId → connectionId 映射，复用已有 SSH 文件服务。
  *
- * @author walissh dev
+ * 
  */
 @Slf4j
 @Service

@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * 上下文管理领域服务接口
  *
- * @author xiaofuge bugstack.cn @小傅哥
+ * 
  */
 public interface IChatContextService {
     PromptContextVO buildPromptContext(String sessionId, String userId, String terminalSessionId, List<Map<String, Object>> messageHistory);

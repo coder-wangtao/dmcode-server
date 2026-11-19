@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
  * 
  * 使用 ADK 的 @Schema 注解定义参数，支持 FunctionTool.create()
  * 
- * @author walissh dev
+ * 
  */
 @Slf4j
 @Service

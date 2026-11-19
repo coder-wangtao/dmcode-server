@@ -23,8 +23,7 @@ import jakarta.annotation.Resource;
  * <p>节点链路：
  * RootNode → AiCallNode → LoopDecisionNode → UserFeedbackNode
  *
- * @author xiaofuge bugstack.cn @小傅哥
- * 2026/5/4 14:45
+ * 
  */
 @Slf4j
 @Service
@@ -40,6 +39,7 @@ public class AIAgentReActServiceCase implements IAIAgentReActServiceCase {
     public ResponseBodyEmitter chatStream(ChatRequestDTO requestDTO) {
         // 1. 创建 SSE 发射器（30 分钟超时），设置 Content-Type 为 ndjson
         //    原 5 分钟超时在多轮工具调用 + 长报告生成场景时会提前截断
+        //Spring MVC提供的异步响应组件。
         ResponseBodyEmitter emitter = new ResponseBodyEmitter(30 * 60 * 1000L) {
             @Override
             protected void extendResponse(org.springframework.http.server.ServerHttpResponse outputMessage) {

@@ -32,8 +32,7 @@ import java.util.stream.Collectors;
  * - 上一轮有工具调用（继续对话）
  * - AI 未返回终止指令
  *
- * @author xiaofuge bugstack.cn @小傅哥
- * 2026/5/4
+ * 
  */
 @Slf4j
 @Component("reactLoopDecisionNode")

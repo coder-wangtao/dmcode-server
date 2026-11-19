@@ -32,9 +32,9 @@ ai:
 #                  path: /Users/fuzhengwei/coding/gitcode/KnowledgePlanet/ai-agent-scaffold/ai-agent-scaffold-lite/docs/dev-ops/agent/skills
             agents:
               - name: onlyAgent
-                description: 小傅哥学习项目计划
+                description: wt学习项目计划
                 instruction: |
-                  通过百度检索小傅哥编程实战项目，并根据检索内容，针对初学用户给出学习计划。
+                  通过百度检索wt编程实战项目，并根据检索内容，针对初学用户给出学习计划。
             runner:
               agent-name: onlyAgent
               plugin-name-list:

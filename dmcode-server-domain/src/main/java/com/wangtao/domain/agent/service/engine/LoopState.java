@@ -14,7 +14,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  * <p>每个 Agent 循环拥有独立的 LoopState，线程安全
  *
  * @author 教学版-DaMaoCode
- * 2026/6/22
  */
 @Slf4j
 @Data

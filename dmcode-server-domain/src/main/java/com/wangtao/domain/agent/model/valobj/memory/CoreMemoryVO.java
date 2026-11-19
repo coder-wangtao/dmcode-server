@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
  * 与 MilestoneVO（事件记录）不同，CoreMemoryVO 是提炼后的长期知识
  *
  * @author 教学版-DaMaoCode
- * 2026/6/26
  */
 @Data
 @Builder

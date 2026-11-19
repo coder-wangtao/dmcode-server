@@ -21,8 +21,7 @@ import java.util.regex.Pattern;
  * 提取的信号供 IntentEnhancer 查找相关上下文，注入到 LLM 提示中
  *
  * @author 教学版-DaMaoCode
- * 2026/6/22
- */
+*/
 @Slf4j
 @Component
 public class SignalExtractor {

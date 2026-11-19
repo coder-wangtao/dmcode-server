@@ -20,8 +20,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter
  *    - 不包含 tool_calls → 返回结果给用户
  * 4. 终止条件：finish / 达到最大步数 / 异常
  *
- * @author xiaofuge bugstack.cn @小傅哥
- * 2026/5/4 13:56
+ * 
  */
 public interface IAIAgentReActServiceCase {
 

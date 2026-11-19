@@ -22,7 +22,6 @@ import java.util.Map;
  * - CoreMemoryProvider 注入长期知识（规则/偏好/纠正，跨会话性）
  *
  * @author 教学版-DaMaoCode
- * 2026/6/26
  */
 @Slf4j
 @Component

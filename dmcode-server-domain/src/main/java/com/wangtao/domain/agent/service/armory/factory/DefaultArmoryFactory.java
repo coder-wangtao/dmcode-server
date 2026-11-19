@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 默认的装配工厂
  *
- * @author xiaofuge bugstack.cn @小傅哥
+ * 
  */
 @Service
 public class DefaultArmoryFactory {

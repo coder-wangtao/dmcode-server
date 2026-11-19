@@ -29,8 +29,7 @@ import java.util.regex.Pattern;
  *
  * <p>拆解结果缓存：每个 sessionId 只拆解一次，后续轮次复用。
  *
- * @author walissh dev
- * 2026/6/19
+ * 
  */
 @Slf4j
 @Service

@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 /**
  * 指令执行结果（Client → Server，通过 HTTP POST 回传）
  *
- * @author walissh dev
+ * 
  */
 @Data
 @Builder

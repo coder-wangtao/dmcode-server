@@ -24,7 +24,7 @@ import java.util.Map;
  * 工具方法执行期间始终是同一个 emitter（单用户场景）。
  * 多用户并发场景需要改用 sessionId 路由 + 工具方法传参。
  *
- * @author walissh dev
+ * 
  */
 @Slf4j
 @Component("sseToolProgressNotifier")
