@@ -16,12 +16,12 @@ import java.util.Map;
  * 注册为 ADK FunctionTool，让主 Agent 能通过工具调用启动子代理。
  * 使用反射式 API: FunctionTool.create(obj, methodName)
  * <p>
- * 对标 WaLiCode AgentTool：
+ * 对标 DaMaoCode AgentTool：
  * - Explore：只读探索
  * - Verification：验证测试
  * - General：通用任务
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/22
  */
 @Slf4j

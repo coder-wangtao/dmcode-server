@@ -442,7 +442,7 @@ public class CodeEditAdkTool {
     }
 
     /**
-     * 回滚到最近一次 WaLiCode 写入前的备份。
+     * 回滚到最近一次 DaMaoCode 写入前的备份。
      */
     public Map<String, Object> rollbackLocalFile(
             @Schema(name = "filePath", description = "要回滚的本地文件路径")

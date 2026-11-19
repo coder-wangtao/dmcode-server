@@ -15,12 +15,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * 信号提取器（对标 WaLiCode SignalExtractor.ts）
+ * 信号提取器（对标 DaMaoCode SignalExtractor.ts）
  * <p>
  * 核心思想：只提取结构化信息，不做决策
  * 提取的信号供 IntentEnhancer 查找相关上下文，注入到 LLM 提示中
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/22
  */
 @Slf4j

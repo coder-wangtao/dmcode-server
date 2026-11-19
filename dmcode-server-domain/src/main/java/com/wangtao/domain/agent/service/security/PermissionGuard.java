@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 
 /**
  * 权限守卫（五层递进安全检查）
- * <p>对标 WaLiCode permissionGuard.ts
+ * <p>对标 DaMaoCode permissionGuard.ts
  * <p>
  * 五层检查（逐层递进，任一层拒绝即阻止）：
  * 1. AST 解析层：解析工具参数，验证结构合法性
@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
  * 4. 拒绝兜底层：未知工具或无法解析的参数直接拒绝
  * 5. 断路器层：同一会话连续触发安全拒绝 → 自动降级
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/22
  */
 @Slf4j

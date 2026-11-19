@@ -13,7 +13,7 @@ import java.util.List;
  * <p>当用户提出复杂任务时，AI 将任务拆解为多个有序子任务，
  * 每个子任务可独立执行并跟踪状态。
  *
- * <p>对应参考项目 WaLiCode 的 Task Breakdown 模式：
+ * <p>对应参考项目 DaMaoCode 的 Task Breakdown 模式：
  * 检测复杂任务 → 提案拆解 → 用户确认 → 顺序执行
  *
  * @author wt

@@ -10,7 +10,7 @@ import java.util.List;
  * 存储用户长期偏好、规则、纠正、关键决策
  * 与 IChatHistoryRepository（会话级消息存储）不同，本接口管理跨会话的记忆
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/26
  */
 public interface ICoreMemoryRepository {

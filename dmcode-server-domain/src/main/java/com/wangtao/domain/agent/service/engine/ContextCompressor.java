@@ -20,7 +20,7 @@ import java.util.Map;
 
 /**
  * 上下文压缩器
- * <p>对标 WaLiCode contextCompressor.ts
+ * <p>对标 DaMaoCode contextCompressor.ts
  * <p>
  * 触发条件：
  * 1. 413 Payload Too Large 错误
@@ -34,7 +34,7 @@ import java.util.Map;
  * <p>
  * 注意：AI 摘要压缩（Level 3）需要 ChatClient 支持，Phase 2 实现
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/22
  */
 @Slf4j

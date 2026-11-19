@@ -21,7 +21,7 @@ import java.util.Map;
  * - MilestoneProvider 注入事件（TASK_CHANGE/ERROR 等，即时性）
  * - CoreMemoryProvider 注入长期知识（规则/偏好/纠正，跨会话性）
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/26
  */
 @Slf4j

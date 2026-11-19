@@ -604,7 +604,7 @@ public abstract class AbstractAIAgentReActSupport extends AbstractMultiThreadStr
     /**
      * 判断响应是否包含工具调用（用于决定是否继续循环）
      * 兼容两种格式：
-     * - WaLiCode 风格：直接解析 tool_calls JSON
+     * - DaMaoCode 风格：直接解析 tool_calls JSON
      * - mobile-claw-case 风格：解析 action 字符串
      */
     protected boolean hasToolCalls(String response) {

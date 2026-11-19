@@ -20,7 +20,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 子代理管理器（对标 WaLiCode agentService.ts + executeSubAgent）
+ * 子代理管理器（对标 DaMaoCode agentService.ts + executeSubAgent）
  * <p>
  * 三类内置子代理：
  * - Explore：只读探索（搜索/阅读代码，不修改文件）
@@ -33,7 +33,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * - 只读代理禁止写文件/删除操作
  * - 结果通过 tool result 返回给父对话
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/22
  */
 @Slf4j
@@ -333,7 +333,7 @@ public class SubAgentManager {
      */
     private String buildAgentSystemPrompt(AgentDefinition agentDef) {
         StringBuilder sb = new StringBuilder();
-        sb.append("你是 WaLiCode 的").append(agentDef.getDescription()).append("。你正在执行一个子任务。\n\n");
+        sb.append("你是 DaMaoCode 的").append(agentDef.getDescription()).append("。你正在执行一个子任务。\n\n");
         sb.append("## 行为准则\n");
         sb.append("- 专注于分配给你的任务，不要偏离\n");
         sb.append("- 结果要精炼、有结构，便于主对话整合\n");

@@ -5,9 +5,9 @@ import com.wangtao.api.dto.ReActResultDTO;
 /**
  * Agent 循环 SSE 回调接口
  * <p>所有事件通过此接口推送到前端
- * <p>对标 WaLiCode streamingAgent.ts 的 StreamingCallbacks
+ * <p>对标 DaMaoCode streamingAgent.ts 的 StreamingCallbacks
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/22
  */
 public interface AgentLoopCallbacks {

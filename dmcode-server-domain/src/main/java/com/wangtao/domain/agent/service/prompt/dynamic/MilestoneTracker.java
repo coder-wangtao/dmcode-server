@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  * 2. USER_CORRECTION 事件触发 CoreMemoryService 写入长期记忆
  * 3. 工具错误（tool_error）也触发记忆写入
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/26
  */
 @Slf4j

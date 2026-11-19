@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
  * 2. 在 DB 中查询 keywords 字段包含任一关键词的记忆条目
  * 3. 如果无匹配，fallback 返回最近的高优先级记忆
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/26
  */
 @Slf4j

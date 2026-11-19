@@ -77,7 +77,7 @@ public class DefaultReActFactory {
         private ResponseBodyEmitter emitter;
 
         // ══════════════════════════════════════════════════════════
-        //  消息历史（参考 WaLiCode streamingAgent.ts）
+        //  消息历史（参考 DaMaoCode streamingAgent.ts）
         //  每轮 ReAct 循环结束后，将 toolCalls + toolResults 追加到这里
         // ══════════════════════════════════════════════════════════
 
@@ -191,7 +191,7 @@ public class DefaultReActFactory {
         private com.wangtao.api.dto.ReActResultDTO result;
 
         // ══════════════════════════════════════════════════════════
-        //  工具定义（参考 WaLiCode ai.ts）
+        //  工具定义（参考 DaMaoCode ai.ts）
         // ══════════════════════════════════════════════════════════
 
         /**

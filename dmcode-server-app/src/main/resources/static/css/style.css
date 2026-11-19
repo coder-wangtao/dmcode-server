@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   WaLiCode Web 控制台 — 样式 v2（对齐 deepseek-harness 前端风格）
+   DaMaoCode Web 控制台 — 样式 v2（对齐 deepseek-harness 前端风格）
    设计令牌 + 双主题（light 默认 / dark）
    ═══════════════════════════════════════════════════════════ */
 
@@ -36,7 +36,7 @@
 }
 
 [data-theme="dark"] {
-  /* 暗色（VS Code 风格，对齐 walicode-client） */
+  /* 暗色（VS Code 风格，对齐 DaMaoCode-client） */
   --bg-base: #1e1e1e;
   --bg-layer-1: #252526;
   --bg-layer-2: #2d2d30;

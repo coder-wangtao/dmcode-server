@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * <p>跨层协调：ToolCallNode 发起确认请求 → 阻塞等待 →
  * PermissionResolveController（trigger 层）收到用户回写 → 唤醒
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/22
  */
 @Slf4j

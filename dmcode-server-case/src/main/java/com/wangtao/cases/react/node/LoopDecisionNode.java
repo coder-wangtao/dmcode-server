@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
  * 1. 检查终止条件（错误、最大步数、用户停止）
  * 2. 决定是否继续循环（回到 AiCallNode）或路由到 UserFeedbackNode
  *
- * <p>终止条件（参考 WaLiCode streamingAgent.ts）：
+ * <p>终止条件（参考 DaMaoCode streamingAgent.ts）：
  * - AI 返回 finish 终止指令
  * - 达到最大步数 (maxSteps)
  * - 达到最大工具调用次数 (maxToolCalls)
@@ -249,7 +249,7 @@ public class LoopDecisionNode extends AbstractAIAgentReActSupport {
 
     /**
      * 检查是否包含终止指令
-     * 参考 WaLiCode streamingAgent.ts 的终止条件判断
+     * 参考 DaMaoCode streamingAgent.ts 的终止条件判断
      */
     private boolean containsFinishCommand(String content) {
         if (content == null || content.isBlank()) return false;

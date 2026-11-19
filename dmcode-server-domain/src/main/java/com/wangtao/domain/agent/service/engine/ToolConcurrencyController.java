@@ -13,14 +13,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 工具并发控制器
- * <p>对标 WaLiCode toolConcurrencyController.ts
+ * <p>对标 DaMaoCode toolConcurrencyController.ts
  * <p>
  * 策略：
  * - 只读工具（read_file, list_files, search, grep）→ 并发执行（最多 5 个）
  * - 写工具（write_file, edit_file, delete, execute_command）→ 串行执行
  * - 需要确认的工具 → 由 PermissionGuard 处理
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/22
  */
 @Slf4j

@@ -6,16 +6,16 @@ ai:
           app-name: unifiedAgent
           agent:
             agent-id: 200000
-            agent-name: WaLiCode Agent
+            agent-name: DaMaoCode Agent
             agent-desc: AI 智能助手，可读写本地/远程文件、执行本地/远程命令、代码审查、Bug 修复、运维排障，统一入口
           module:
             ai-api:
-              base-url: ${WALICODE_AI_BASE_URL:http://127.0.0.1:8777/v1/}
-              api-key: ${WALICODE_AI_API_KEY:}
+              base-url: ${DaMaoCode_AI_BASE_URL:http://127.0.0.1:8777/v1/}
+              api-key: ${DaMaoCode_AI_API_KEY:}
               completions-path: chat/completions
               embeddings-path: embeddings
             chat-model:
-              model: ${WALICODE_AI_MODEL:k3}
+              model: ${DaMaoCode_AI_MODEL:k3}
             # 智能体配置
             agents:
               - name: unifiedOperator

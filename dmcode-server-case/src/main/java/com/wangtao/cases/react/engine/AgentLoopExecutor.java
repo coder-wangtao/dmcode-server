@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Agent 循环执行器（Supervisor 模式）
- * <p>对标 WaLiCode streamingAgent.ts
+ * <p>对标 DaMaoCode streamingAgent.ts
  * <p>
  * 职责（不侵入节点链）：
  * 1. 包装 rootNode.apply()，提供外部监督能力
@@ -41,7 +41,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * - Token 预算预警
  * - 统一的错误兜底
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/22
  */
 @Slf4j

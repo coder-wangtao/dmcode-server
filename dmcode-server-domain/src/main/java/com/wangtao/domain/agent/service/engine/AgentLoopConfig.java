@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 
 /**
  * Agent 循环配置
- * <p>对标 WaLiCode streamingAgent.ts 的 AgentLoopConfig
+ * <p>对标 DaMaoCode streamingAgent.ts 的 AgentLoopConfig
  * <p>由 RootNode 根据 agent YAML 配置 + 意图分级构建
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/22
  */
 @Data

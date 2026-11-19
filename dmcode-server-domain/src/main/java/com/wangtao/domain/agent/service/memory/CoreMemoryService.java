@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
  * - CoreMemoryService 存储提炼后的长期知识（规则/偏好/纠正）
  * - MilestoneTracker 的 USER_CORRECTION 事件可触发 CoreMemoryService 写入
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/26
  */
 @Slf4j

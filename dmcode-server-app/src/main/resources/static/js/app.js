@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   WaLiCode Web 控制台 — 前端逻辑 v3
+   DaMaoCode Web 控制台 — 前端逻辑 v3
    参考 deepseek-harness 前端实现的功能升级版：
    - 多会话管理（搜索 / 重命名 / 置顶 / 删除 / 日期分组 / 导出）
    - Markdown 渲染（marked + DOMPurify + highlight.js，代码块一键复制）
@@ -659,7 +659,7 @@ function showWelcome() {
     w.id = 'welcome';
     w.innerHTML = `
       <div class="welcome-icon">🤖</div>
-      <div class="welcome-title">WaLiCode Web 控制台</div>
+      <div class="welcome-title">DaMaoCode Web 控制台</div>
       <div class="welcome-subtitle">AI 编码 · 审查 · 运维排障助手。输入任务，智能体会自动拆解步骤、调用工具并汇报改动。</div>
       <div class="welcome-hints">
         <span class="welcome-hint">Markdown 渲染</span>
@@ -2586,7 +2586,7 @@ function handleCommand(text) {
 
 function exportSession() {
   if (!state.messages.length) { toast('当前会话没有消息可导出', 'info'); return; }
-  const lines = [`# WaLiCode 会话导出`, '', `- 智能体：${$('#chat-title').textContent}`, `- 会话：${state.sessionId || '-'}`, `- 时间：${new Date().toLocaleString('zh-CN')}`, ''];
+  const lines = [`# DaMaoCode 会话导出`, '', `- 智能体：${$('#chat-title').textContent}`, `- 会话：${state.sessionId || '-'}`, `- 时间：${new Date().toLocaleString('zh-CN')}`, ''];
   for (const m of state.messages) {
     if (m.type === 'user') lines.push(`## 🧑 用户${m.time ? '（' + fmtTime(m.time) + '）' : ''}${m.images?.length ? '（附图片 ' + m.images.length + ' 张）' : ''}${m.files?.length ? '（附文件 ' + m.files.map(f => f.name).join('、') + '）' : ''}`, '', m.text, '');
     else if (m.type === 'ai') {
@@ -2620,7 +2620,7 @@ function exportSession() {
   const blob = new Blob([lines.join('\n')], { type: 'text/markdown;charset=utf-8' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = `walicode-session-${(state.sessionId || 'na').slice(0, 8)}.md`;
+  a.download = `DaMaoCode-session-${(state.sessionId || 'na').slice(0, 8)}.md`;
   a.click();
   URL.revokeObjectURL(a.href);
   toast('已导出 Markdown', 'ok', 2000);
@@ -2665,7 +2665,7 @@ async function switchAgent(agentId) {
   state.queue = [];
   state.messages = [];
   const agent = state.agents.find(a => String(a.agentId) === String(agentId));
-  $('#chat-title').textContent = agent ? agent.agentName : 'WaLiCode Agent';
+  $('#chat-title').textContent = agent ? agent.agentName : 'DaMaoCode Agent';
   await ensureSession().catch(e => toast(e.message, 'err'));
 }
 
@@ -3229,7 +3229,7 @@ async function boot() {
   try {
     await loadAgents();
     const agent = state.agents.find(a => String(a.agentId) === String(state.agentId));
-    $('#chat-title').textContent = agent ? agent.agentName : 'WaLiCode Agent';
+    $('#chat-title').textContent = agent ? agent.agentName : 'DaMaoCode Agent';
     setConnStatus(true, '已连接');
   } catch (e) {
     setConnStatus(false, '连接失败');

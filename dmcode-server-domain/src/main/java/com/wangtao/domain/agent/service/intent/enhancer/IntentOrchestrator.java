@@ -20,7 +20,7 @@ import java.util.List;
  * <p>
  * 协调 IntentService（分类）+ IntentEnhancer（上下文增强）+ SignalExtractor（信号提取）
  * <p>
- * 对标 WaLiCode 的 IntentService 完整流程：
+ * 对标 DaMaoCode 的 IntentService 完整流程：
  * 1. 规则快速路径 → 高置信度直接返回
  * 2. 异步模型预分析 → LLM 分类
  * 3. 信号提取 → 结构化信息
@@ -28,7 +28,7 @@ import java.util.List;
  * 5. 语义检索 → 查找相关上下文
  * 6. 上下文追踪 → 维护对话历史
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/22
  */
 @Slf4j

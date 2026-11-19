@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 意图增强器（对标 WaLiCode IntentEnhancer）
+ * 意图增强器（对标 DaMaoCode IntentEnhancer）
  * <p>
  * 核心流程：
  * 1. SignalExtractor 提取结构化信号
@@ -25,7 +25,7 @@ import java.util.List;
  * - IntentEnhancer 做上下文增强（找到相关文件、命令、错误信息）
  * - 两者协同：分类决定路由，增强提供上下文
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/22
  */
 @Slf4j

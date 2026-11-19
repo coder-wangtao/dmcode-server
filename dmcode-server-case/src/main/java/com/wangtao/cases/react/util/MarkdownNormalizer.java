@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
  * 4. 幂等：多次 normalize 结果一致
  * 5. 占位符使用 \u0001 前缀，trim 时不能吞掉
  *
- * @author WaLiCode
+ * @author DaMaoCode
  */
 public final class MarkdownNormalizer {
 

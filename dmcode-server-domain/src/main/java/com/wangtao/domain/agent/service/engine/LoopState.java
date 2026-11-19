@@ -10,10 +10,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Agent 循环运行时状态
- * <p>对标 WaLiCode streamingAgent.ts 中的 local variables
+ * <p>对标 DaMaoCode streamingAgent.ts 中的 local variables
  * <p>每个 Agent 循环拥有独立的 LoopState，线程安全
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/22
  */
 @Slf4j

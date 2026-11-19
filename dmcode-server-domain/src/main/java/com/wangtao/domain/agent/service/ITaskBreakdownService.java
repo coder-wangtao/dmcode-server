@@ -9,7 +9,7 @@ import java.util.Map;
  * 任务拆解领域服务接口
  *
  * <p>当用户提出复杂任务时，将任务拆解为多个有序子任务。
- * 对应参考项目 WaLiCode 的 Task Breakdown 模式。
+ * 对应参考项目 DaMaoCode 的 Task Breakdown 模式。
  *
  * <p>流程：
  * 1. 检测用户请求是否需要拆解（基于复杂度评估）

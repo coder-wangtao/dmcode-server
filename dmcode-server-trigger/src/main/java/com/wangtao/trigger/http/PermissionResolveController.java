@@ -15,7 +15,7 @@ import jakarta.annotation.Resource;
  * <p>前端 PermissionConfirmModal 用户确认/拒绝后，POST /api/v1/permission/resolve
  * <p>后端接收结果，通过 PermissionConfirmManager 唤醒阻塞等待的 ToolCallNode 线程
  *
- * @author 教学版-WaLiCode
+ * @author 教学版-DaMaoCode
  * 2026/6/22
  */
 @Slf4j
