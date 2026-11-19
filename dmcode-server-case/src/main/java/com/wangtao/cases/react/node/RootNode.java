@@ -13,7 +13,7 @@ import com.wangtao.domain.agent.model.valobj.properties.AiAgentAutoConfigPropert
 import com.wangtao.domain.agent.service.execution.ExecutionPolicyResolver;
 import com.wangtao.domain.agent.service.prompt.TaskModeClassifier;
 import com.wangtao.domain.agent.model.valobj.execution.ExecutionPolicyVO;
-import cn.bugstack.wrench.design.framework.tree.StrategyHandler;
+import cn.wangtao.wrench.design.framework.tree.StrategyHandler;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

@@ -5,7 +5,7 @@ import com.wangtao.domain.agent.model.valobj.AiAgentConfigTableVO;
 import com.wangtao.domain.agent.model.valobj.AiAgentRegisterVO;
 import com.wangtao.domain.agent.service.armory.AbstractArmorySupport;
 import com.wangtao.domain.agent.service.armory.factory.DefaultArmoryFactory;
-import cn.bugstack.wrench.design.framework.tree.StrategyHandler;
+import cn.wangtao.wrench.design.framework.tree.StrategyHandler;
 import lombok.extern.slf4j.Slf4j;
 import com.openai.client.OpenAIClient;
 import com.openai.client.okhttp.OpenAIOkHttpClient;

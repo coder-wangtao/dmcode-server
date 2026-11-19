@@ -39,12 +39,12 @@ public class AIAgentReActServiceCase implements IAIAgentReActServiceCase {
     public ResponseBodyEmitter chatStream(ChatRequestDTO requestDTO) {
         // 1. 创建 SSE 发射器（30 分钟超时），设置 Content-Type 为 ndjson
         //    原 5 分钟超时在多轮工具调用 + 长报告生成场景时会提前截断
-        //Spring MVC提供的异步响应组件。
+        //Spring MVC提供的异步响应组件。30 分钟超時
         ResponseBodyEmitter emitter = new ResponseBodyEmitter(30 * 60 * 1000L) {
             @Override
             protected void extendResponse(org.springframework.http.server.ServerHttpResponse outputMessage) {
-                outputMessage.getHeaders().set("Content-Type", "application/x-ndjson");
-                outputMessage.getHeaders().set("X-Accel-Buffering", "no");
+                outputMessage.getHeaders().set("Content-Type", "application/x-ndjson"); //每一行都是一个独立的 JSON 对象。
+                outputMessage.getHeaders().set("X-Accel-Buffering", "no"); //可以让 Nginx 不再对该响应进行缓冲
                 outputMessage.getHeaders().set("Cache-Control", "no-cache");
             }
         };

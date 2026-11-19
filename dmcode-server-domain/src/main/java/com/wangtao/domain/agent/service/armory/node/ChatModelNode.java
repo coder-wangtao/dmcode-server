@@ -8,7 +8,7 @@ import com.wangtao.domain.agent.service.armory.factory.DefaultArmoryFactory;
 import com.wangtao.domain.agent.service.armory.matter.mcp.client.TooMcpCreateService;
 import com.wangtao.domain.agent.service.armory.matter.mcp.client.factory.DefaultMcpClientFactory;
 import com.wangtao.domain.agent.service.armory.matter.skills.ToolSkillsCreateService;
-import cn.bugstack.wrench.design.framework.tree.StrategyHandler;
+import cn.wangtao.wrench.design.framework.tree.StrategyHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.openai.OpenAiChatModel;

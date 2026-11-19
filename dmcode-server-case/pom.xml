@@ -31,8 +31,8 @@
 
         <!-- 设计模式框架 -->
         <dependency>
-            <groupId>cn.bugstack.wrench</groupId>
-            <artifactId>xfg-wrench-starter-design-framework</artifactId>
+            <groupId>com.wangtao</groupId>
+            <artifactId>agent-wrench-starter-design-framework</artifactId>
         </dependency>
 
         <dependency>

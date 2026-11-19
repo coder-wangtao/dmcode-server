@@ -195,14 +195,14 @@
                         <configuration>
                             <artifactSet>
                                 <includes>
-                                    <include>cn.bugstack.wrench:xfg-wrench-starter-design-framework</include>
+                                    <include>com.wangtao:agent-wrench-starter-design-framework</include>
                                 </includes>
                             </artifactSet>
                             <filters>
                                 <filter>
-                                    <artifact>cn.bugstack.wrench:xfg-wrench-starter-design-framework</artifact>
+                                    <artifact>com.wangtao:agent-wrench-starter-design-framework</artifact>
                                     <includes>
-                                        <include>cn/bugstack/wrench/**</include>
+                                        <include>cn/wangtao/wrench/**</include>
                                     </includes>
                                     <excludes>
                                         <exclude>META-INF/spring.factories</exclude>
@@ -224,8 +224,8 @@
                     <layout>JAR</layout>
                     <excludes>
                         <exclude>
-                            <groupId>cn.bugstack.wrench</groupId>
-                            <artifactId>xfg-wrench-starter-design-framework</artifactId>
+                            <groupId>com.wangtao</groupId>
+                            <artifactId>agent-wrench-starter-design-framework</artifactId>
                         </exclude>
                     </excludes>
                 </configuration>

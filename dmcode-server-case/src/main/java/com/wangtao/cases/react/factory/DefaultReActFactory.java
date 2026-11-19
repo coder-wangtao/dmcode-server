@@ -1,6 +1,5 @@
 package com.wangtao.cases.react.factory;
 
-import cn.bugstack.wrench.design.framework.tree.DynamicContext;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -45,7 +44,7 @@ public class DefaultReActFactory {
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class DynamicContext extends cn.bugstack.wrench.design.framework.tree.DynamicContext {
+    public static class DynamicContext extends cn.wangtao.wrench.design.framework.tree.DynamicContext {
 
         // ══════════════════════════════════════════════════════════
         //  会话基本信息

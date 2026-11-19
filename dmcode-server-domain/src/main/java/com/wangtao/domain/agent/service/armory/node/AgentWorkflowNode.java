@@ -9,7 +9,7 @@ import com.wangtao.domain.agent.service.armory.factory.DefaultArmoryFactory;
 import com.wangtao.domain.agent.service.armory.node.workflow.LoopAgentNode;
 import com.wangtao.domain.agent.service.armory.node.workflow.ParallelAgentNode;
 import com.wangtao.domain.agent.service.armory.node.workflow.SequentialAgentNode;
-import cn.bugstack.wrench.design.framework.tree.StrategyHandler;
+import cn.wangtao.wrench.design.framework.tree.StrategyHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

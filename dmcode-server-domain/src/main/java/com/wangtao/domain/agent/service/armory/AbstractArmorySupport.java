@@ -3,7 +3,7 @@ package com.wangtao.domain.agent.service.armory;
 import com.wangtao.domain.agent.model.entity.ArmoryCommandEntity;
 import com.wangtao.domain.agent.model.valobj.AiAgentRegisterVO;
 import com.wangtao.domain.agent.service.armory.factory.DefaultArmoryFactory;
-import cn.bugstack.wrench.design.framework.tree.AbstractMultiThreadStrategyRouter;
+import cn.wangtao.wrench.design.framework.tree.AbstractMultiThreadStrategyRouter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.BeanDefinition;

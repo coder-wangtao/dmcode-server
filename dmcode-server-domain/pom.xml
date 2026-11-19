@@ -11,8 +11,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>cn.bugstack.wrench</groupId>
-            <artifactId>xfg-wrench-starter-design-framework</artifactId>
+            <groupId>com.wangtao</groupId>
+            <artifactId>agent-wrench-starter-design-framework</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.ai</groupId>
@@ -99,7 +99,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <classpathDependencyExcludes>
-                        <classpathDependencyExclude>cn.bugstack.wrench:xfg-wrench-starter-design-framework</classpathDependencyExclude>
+                        <classpathDependencyExclude>com.wangtao:agent-wrench-starter-design-framework</classpathDependencyExclude>
                     </classpathDependencyExcludes>
                 </configuration>
             </plugin>

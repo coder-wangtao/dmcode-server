@@ -4,8 +4,8 @@ import com.wangtao.domain.agent.model.entity.ArmoryCommandEntity;
 import com.wangtao.domain.agent.model.valobj.AiAgentConfigTableVO;
 import com.wangtao.domain.agent.model.valobj.AiAgentRegisterVO;
 import com.wangtao.domain.agent.service.armory.node.RootNode;
-import cn.bugstack.wrench.design.framework.tree.DynamicContext;
-import cn.bugstack.wrench.design.framework.tree.StrategyHandler;
+import cn.wangtao.wrench.design.framework.tree.DynamicContext;
+import cn.wangtao.wrench.design.framework.tree.StrategyHandler;
 import com.google.adk.agents.BaseAgent;
 import com.google.adk.agents.SequentialAgent;
 import lombok.AllArgsConstructor;
@@ -52,7 +52,7 @@ public class DefaultArmoryFactory {
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class DynamicContext extends cn.bugstack.wrench.design.framework.tree.DynamicContext {
+    public static class DynamicContext extends cn.wangtao.wrench.design.framework.tree.DynamicContext {
 
         /**
          * LLM API
