@@ -1,5 +1,6 @@
 package com.wangtao.domain.agent.service.engine;
 
+import com.wangtao.domain.agent.service.security.SecretRedactor;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -54,7 +55,7 @@ class TokenEstimatorTests {
     @Test
     void apiKeyPatternIsRedacted() {
         String input = "Use API key sk-abcdefghij1234567890abcdefghij12 for auth";
-        String redacted = cn.bugstack.ai.domain.agent.service.security.SecretRedactor.redact(input);
+        String redacted = SecretRedactor.redact(input);
         assertTrue(!redacted.contains("sk-abcdefghij1234567890abcdefghij12"));
         assertTrue(redacted.contains("[REDACTED]"));
     }
@@ -62,21 +63,21 @@ class TokenEstimatorTests {
     @Test
     void passwordPatternIsRedacted() {
         String input = "password = mySecret123456";
-        String redacted = cn.bugstack.ai.domain.agent.service.security.SecretRedactor.redact(input);
+        String redacted = SecretRedactor.redact(input);
         assertTrue(!redacted.contains("mySecret123456"));
     }
 
     @Test
     void normalCodeIsNotRedacted() {
         String input = "public void process(String data) { return data.trim(); }";
-        String redacted = cn.bugstack.ai.domain.agent.service.security.SecretRedactor.redact(input);
+        String redacted = SecretRedactor.redact(input);
         assertEquals(input, redacted);
     }
 
     @Test
     void privateKeyBlockIsRedacted() {
         String input = "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAK\n-----END RSA PRIVATE KEY-----";
-        String redacted = cn.bugstack.ai.domain.agent.service.security.SecretRedactor.redact(input);
+        String redacted = SecretRedactor.redact(input);
         assertTrue(!redacted.contains("MIIEowIBAAK"));
     }
 }

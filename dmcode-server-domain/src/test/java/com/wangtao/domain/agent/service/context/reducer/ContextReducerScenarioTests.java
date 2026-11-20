@@ -1,6 +1,6 @@
 package com.wangtao.domain.agent.service.context.reducer;
 
-import cn.bugstack.ai.domain.agent.service.engine.TokenEstimator;
+import com.wangtao.domain.agent.service.engine.TokenEstimator;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.lang.reflect.Field;

@@ -1,5 +1,6 @@
 package com.wangtao.domain.agent.service.context;
 
+import com.wangtao.domain.agent.service.engine.TokenEstimator;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -91,7 +92,7 @@ class LongConversationContextTests {
         long total = 0;
         for (Map<String, Object> msg : messages) {
             String content = String.valueOf(msg.get("content"));
-            total += cn.bugstack.ai.domain.agent.service.engine.TokenEstimator.estimate(content);
+            total += TokenEstimator.estimate(content);
         }
         return total;
     }

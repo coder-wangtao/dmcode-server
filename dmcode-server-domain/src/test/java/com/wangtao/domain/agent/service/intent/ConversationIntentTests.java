@@ -1,7 +1,7 @@
 package com.wangtao.domain.agent.service.intent;
 
-import cn.bugstack.ai.domain.agent.model.valobj.intent.ConversationContextVO;
-import cn.bugstack.ai.domain.agent.model.valobj.intent.IntentTypeEnumVO;
+
+import com.wangtao.domain.agent.model.valobj.intent.ConversationContextVO;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

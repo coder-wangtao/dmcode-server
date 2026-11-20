@@ -1,5 +1,6 @@
 package com.wangtao.domain.agent.service.coding;
 
+import com.wangtao.domain.agent.service.coding.verification.PostEditVerificationService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -77,8 +78,8 @@ class MultiScenarioWorkflowTests {
                 [INFO] BUILD FAILURE
                 """;
 
-        cn.bugstack.ai.domain.agent.service.coding.verification.PostEditVerificationService.VerificationResult result =
-                cn.bugstack.ai.domain.agent.service.coding.verification.PostEditVerificationService.VerificationResult.failed(
+        PostEditVerificationService.VerificationResult result =
+                PostEditVerificationService.VerificationResult.failed(
                         "maven", "退出码: 1", compileOutput);
 
         assertTrue(!result.verified());

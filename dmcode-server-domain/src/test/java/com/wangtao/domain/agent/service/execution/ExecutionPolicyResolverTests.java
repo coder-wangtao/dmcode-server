@@ -1,9 +1,9 @@
 package com.wangtao.domain.agent.service.execution;
 
-import cn.bugstack.ai.domain.agent.model.valobj.AiAgentConfigTableVO;
-import cn.bugstack.ai.domain.agent.model.valobj.execution.ExecutionPolicyVO;
-import cn.bugstack.ai.domain.agent.model.valobj.intent.IntentResultVO;
-import cn.bugstack.ai.domain.agent.model.valobj.intent.IntentTypeEnumVO;
+import com.wangtao.domain.agent.model.valobj.AiAgentConfigTableVO;
+import com.wangtao.domain.agent.model.valobj.execution.ExecutionPolicyVO;
+import com.wangtao.domain.agent.model.valobj.intent.IntentResultVO;
+import com.wangtao.domain.agent.model.valobj.intent.IntentTypeEnumVO;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

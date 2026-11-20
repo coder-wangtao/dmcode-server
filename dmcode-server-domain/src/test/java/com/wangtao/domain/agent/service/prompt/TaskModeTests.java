@@ -1,8 +1,8 @@
 package com.wangtao.domain.agent.service.prompt;
 
-import cn.bugstack.ai.domain.agent.model.valobj.prompt.PromptContextVO;
-import cn.bugstack.ai.domain.agent.model.valobj.prompt.TaskModeVO;
-import cn.bugstack.ai.domain.agent.service.prompt.dynamic.DynamicPromptBuilder;
+import com.wangtao.domain.agent.model.valobj.prompt.PromptContextVO;
+import com.wangtao.domain.agent.model.valobj.prompt.TaskModeVO;
+import com.wangtao.domain.agent.service.prompt.dynamic.DynamicPromptBuilder;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
