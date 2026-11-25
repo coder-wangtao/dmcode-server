@@ -1,3 +1,175 @@
-26-11-20.15:54:43.443 [main            ] WARN  PasswordEncryptor      - 未配置 DAMAOSSH_SECRET_KEY 环境变量，使用默认密钥，生产环境请务必配置！
-26-11-20.15:54:43.747 [main            ] WARN  SyncMcpSamplingProvider - No sampling methods found
-26-11-20.15:54:43.748 [main            ] WARN  SyncMcpElicitationProvider - No elicitation methods found
+26-11-25.14:26:45.522 [main            ] WARN  PasswordEncryptor      - 未配置 DAMAOSSH_SECRET_KEY 环境变量，使用默认密钥，生产环境请务必配置！
+26-11-25.14:26:45.838 [main            ] WARN  SyncMcpSamplingProvider - No sampling methods found
+26-11-25.14:26:45.839 [main            ] WARN  SyncMcpElicitationProvider - No elicitation methods found
+26-11-25.14:28:41.926 [openai-stream-handler-thread-0] WARN  MeterRegistry          - This Gauge has been already registered (MeterId{name='spring.ai.tokens.total', tags=[tag(model=glm-5.3-flash)]}), the registration will be ignored. Note that subsequent logs will be logged at debug level.
+26-11-25.15:23:06.445 [main            ] WARN  PasswordEncryptor      - 未配置 DAMAOSSH_SECRET_KEY 环境变量，使用默认密钥，生产环境请务必配置！
+26-11-25.15:23:07.054 [main            ] WARN  SyncMcpSamplingProvider - No sampling methods found
+26-11-25.15:23:07.056 [main            ] WARN  SyncMcpElicitationProvider - No elicitation methods found
+26-11-25.15:24:35.429 [HikariPool-1:housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m29s68ms).
+26-11-25.15:24:35.704 [react-stream-webui_1795523879284] WARN  SQLErrorCodesFactory   - Error while extracting database name
+org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:358)
+	at org.springframework.jdbc.support.SQLErrorCodesFactory.resolveErrorCodes(SQLErrorCodesFactory.java:239)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.lambda$setDataSource$0(SQLErrorCodeSQLExceptionTranslator.java:147)
+	at org.springframework.util.function.SingletonSupplier.get(SingletonSupplier.java:113)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.setDataSource(SQLErrorCodeSQLExceptionTranslator.java:148)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.<init>(SQLErrorCodeSQLExceptionTranslator.java:109)
+	at org.mybatis.spring.MyBatisExceptionTranslator.lambda$new$0(MyBatisExceptionTranslator.java:57)
+	at org.mybatis.spring.MyBatisExceptionTranslator.initExceptionTranslator(MyBatisExceptionTranslator.java:117)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy95.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:169)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy99.queryById(Unknown Source)
+	at com.wangtao.infrastructure.adapter.repository.ChatHistoryRepository.getSession(ChatHistoryRepository.java:34)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at com.wangtao.infrastructure.adapter.repository.ChatHistoryRepository$$SpringCGLIB$$0.getSession(<generated>)
+	at com.wangtao.cases.react.node.RootNode.doApply(RootNode.java:105)
+	at com.wangtao.cases.react.node.RootNode.doApply(RootNode.java:36)
+	at cn.wangtao.wrench.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:37)
+	at com.wangtao.cases.react.AIAgentReActServiceCase.lambda$chatStream$3(AIAgentReActServiceCase.java:104)
+	at com.wangtao.cases.react.engine.AgentLoopExecutor.executeSupervised(AgentLoopExecutor.java:110)
+	at com.wangtao.cases.react.AIAgentReActServiceCase.lambda$chatStream$4(AIAgentReActServiceCase.java:100)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1418)
+	at org.h2.jdbc.JdbcConnection.getMetaData(JdbcConnection.java:333)
+	at com.zaxxer.hikari.pool.ProxyConnection.getMetaData(ProxyConnection.java:371)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.getMetaData(HikariProxyConnection.java)
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:332)
+	... 34 common frames omitted
+26-11-25.15:24:35.708 [react-stream-webui_1795523879284] ERROR AgentLoopExecutor      - 发送 error 事件: 执行异常: 
+### Error querying database.  Cause: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-240]
+### The error may exist in file [/Users/wangtao/Desktop/后端/dmcode-server/dmcode-server-app/target/classes/mybatis/mapper/chat_session_mapper.xml]
+### The error may involve com.wangtao.infrastructure.dao.IChatSessionDao.queryById
+### The error occurred while executing a query
+### Cause: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-240]
+; Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-240]
+26-11-25.15:24:35.713 [react-stream-webui_1795523879284] WARN  SQLErrorCodesFactory   - Error while extracting database name
+org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:358)
+	at org.springframework.jdbc.support.SQLErrorCodesFactory.resolveErrorCodes(SQLErrorCodesFactory.java:239)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.lambda$setDataSource$0(SQLErrorCodeSQLExceptionTranslator.java:147)
+	at org.springframework.util.function.SingletonSupplier.get(SingletonSupplier.java:113)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.setDataSource(SQLErrorCodeSQLExceptionTranslator.java:148)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.<init>(SQLErrorCodeSQLExceptionTranslator.java:109)
+	at org.mybatis.spring.MyBatisExceptionTranslator.lambda$new$0(MyBatisExceptionTranslator.java:57)
+	at org.mybatis.spring.MyBatisExceptionTranslator.initExceptionTranslator(MyBatisExceptionTranslator.java:117)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy95.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:169)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy102.queryById(Unknown Source)
+	at com.wangtao.infrastructure.adapter.repository.AgentRunRepository.save(AgentRunRepository.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at com.wangtao.infrastructure.adapter.repository.AgentRunRepository$$SpringCGLIB$$0.save(<generated>)
+	at com.wangtao.cases.react.engine.AgentLoopExecutor.executeSupervised(AgentLoopExecutor.java:207)
+	at com.wangtao.cases.react.AIAgentReActServiceCase.lambda$chatStream$4(AIAgentReActServiceCase.java:100)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1418)
+	at org.h2.jdbc.JdbcConnection.getMetaData(JdbcConnection.java:333)
+	at com.zaxxer.hikari.pool.ProxyConnection.getMetaData(ProxyConnection.java:371)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.getMetaData(HikariProxyConnection.java)
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:332)
+	... 30 common frames omitted
+26-11-25.15:24:35.713 [react-stream-webui_1795523879284] ERROR AIAgentReActServiceCase - ReAct 流式对话异常
+org.springframework.dao.DataAccessResourceFailureException: 
+### Error querying database.  Cause: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-240]
+### The error may exist in file [/Users/wangtao/Desktop/后端/dmcode-server/dmcode-server-app/target/classes/mybatis/mapper/agent_run_mapper.xml]
+### The error may involve com.wangtao.infrastructure.dao.IAgentRunDao.queryById
+### The error occurred while executing a query
+### Cause: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-240]
+; Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-240]
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:97)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:102)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:111)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy95.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:169)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy102.queryById(Unknown Source)
+	at com.wangtao.infrastructure.adapter.repository.AgentRunRepository.save(AgentRunRepository.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at com.wangtao.infrastructure.adapter.repository.AgentRunRepository$$SpringCGLIB$$0.save(<generated>)
+	at com.wangtao.cases.react.engine.AgentLoopExecutor.executeSupervised(AgentLoopExecutor.java:207)
+	at com.wangtao.cases.react.AIAgentReActServiceCase.lambda$chatStream$4(AIAgentReActServiceCase.java:100)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1418)
+	at org.h2.jdbc.JdbcConnection.getAutoCommit(JdbcConnection.java:463)
+	at com.zaxxer.hikari.pool.ProxyConnection.getAutoCommit(ProxyConnection.java:405)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.getAutoCommit(HikariProxyConnection.java)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:84)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:70)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:348)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:89)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:64)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:348)
+	... 21 common frames omitted
+26-11-25.16:51:27.714 [main            ] WARN  PasswordEncryptor      - 未配置 DAMAOSSH_SECRET_KEY 环境变量，使用默认密钥，生产环境请务必配置！
+26-11-25.16:51:28.016 [main            ] WARN  SyncMcpSamplingProvider - No sampling methods found
+26-11-25.16:51:28.017 [main            ] WARN  SyncMcpElicitationProvider - No elicitation methods found

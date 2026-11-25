@@ -50,6 +50,7 @@ public class AIAgentReActServiceCase implements IAIAgentReActServiceCase {
         };
 
         // 2. 注册 emitter 生命周期回调，感知客户端断开
+        //长度为 1 的数组
         DefaultReActFactory.DynamicContext[] contextHolder = new DefaultReActFactory.DynamicContext[1];
 
         emitter.onCompletion(() -> {

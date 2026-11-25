@@ -1,6 +1,6 @@
 server:
   address: 127.0.0.1
-  port: 0
+  port: 9999
 
 spring:
   servlet:
@@ -22,7 +22,7 @@ spring:
 
 dmcode:
   local:
-    token: ${DAMAOCODE_LOCAL_TOKEN:}
+    token: ${DAMAOCODE_LOCAL_TOKEN:my-dev-token}
     workspace: ${DAMAOCODE_WORKSPACE:${user.home}}
 
 thread:

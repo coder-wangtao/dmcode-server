@@ -215,6 +215,7 @@ public class AgentLoopExecutor {
     /**
      * 启动空闲超时检测线程
      */
+    //它会启动一个后台定时线程，周期性检查 Agent 是否长时间没有活动。如果超过配置的空闲时间，就自动终止 Agent，避免任务一直卡住。
     private ScheduledExecutorService startIdleChecker(
             LoopState state,
             DefaultReActFactory.DynamicContext dynamicContext,

@@ -17,6 +17,7 @@ import jakarta.annotation.Resource;
 import java.util.List;
 import java.util.stream.Collectors;
 
+//TODO:OK
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/model")
@@ -30,6 +31,7 @@ public class ModelConfigController {
     @Resource
     private UserModelChatModelFactory userModelChatModelFactory;
 
+    //TODO:OK
     @GetMapping("list")
     public Response<List<ModelConfigResponseDTO>> list() {
         try {
@@ -46,6 +48,7 @@ public class ModelConfigController {
         }
     }
 
+    //TODO:OK
     @PostMapping("save")
     public Response<ModelConfigResponseDTO> save(@RequestBody ModelConfigRequestDTO requestDTO) {
         try {
@@ -68,6 +71,7 @@ public class ModelConfigController {
         }
     }
 
+    //TODO:OK
     @PostMapping("delete")
     public Response<Void> delete(@RequestParam("id") Long id) {
         try {
@@ -88,6 +92,7 @@ public class ModelConfigController {
         }
     }
 
+    //TODO:OK
     @PostMapping("reveal")
     public Response<String> revealApiKey(@RequestParam("id") Long id) {
         try {
@@ -106,6 +111,7 @@ public class ModelConfigController {
         }
     }
 
+    //TODO:OK
     @PostMapping("test")
     public Response<String> test(@RequestBody ModelConfigRequestDTO requestDTO) {
         try {

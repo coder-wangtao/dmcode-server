@@ -67,6 +67,7 @@ public class PermissionConfirmManager {
         Object lock = waitLocks.get(confirmId);
         if (lock != null) {
             synchronized (lock) {
+                //
                 lock.notifyAll();
             }
         }

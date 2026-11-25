@@ -85,10 +85,13 @@ public class CodePatchService {
     }
 
     public boolean rollback(Path target, String backupPath) throws IOException {
+        //target：需要恢复的目标文件
+        //backupPath：之前备份的文件路径。
         Path backup = Path.of(backupPath);
         if (!Files.exists(backup)) {
             return false;
         }
+        //用备份文件覆盖目标文件
         Files.copy(backup, target, StandardCopyOption.REPLACE_EXISTING);
         return true;
     }

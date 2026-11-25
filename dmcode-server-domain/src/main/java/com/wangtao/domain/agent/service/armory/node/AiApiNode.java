@@ -34,12 +34,13 @@ public class AiApiNode extends AbstractArmorySupport {
         int readTimeoutMs = aiApiConfig.getReadTimeoutMs() != null ? aiApiConfig.getReadTimeoutMs() : 120_000;
 
         log.info("Ai API 超时配置: connect={}ms, read={}ms", connectTimeoutMs, readTimeoutMs);
-
+        //sse
         OpenAIClient openAiClient = OpenAIOkHttpClient.builder()
                 .baseUrl(aiApiConfig.getBaseUrl())
                 .apiKey(aiApiConfig.getApiKey())
                 .timeout(Duration.ofMillis(readTimeoutMs))
                 .build();
+        //非sse
         OpenAIClientAsync openAiClientAsync = OpenAIOkHttpClientAsync.builder()
                 .baseUrl(aiApiConfig.getBaseUrl())
                 .apiKey(aiApiConfig.getApiKey())

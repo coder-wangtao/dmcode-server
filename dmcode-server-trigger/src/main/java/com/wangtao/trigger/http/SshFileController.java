@@ -30,11 +30,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+//TODO: connectionId => 连接服务器 => ssh文件操作
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/ssh/file")
 @CrossOrigin(origins = "*")
-// connectionId => ssh文件操作
 public class SshFileController implements ISshFileService {
 
     @Resource

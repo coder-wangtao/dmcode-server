@@ -11,6 +11,21 @@ import jakarta.annotation.Resource;
 import java.util.List;
 import java.util.stream.Collectors;
 
+//代码修改审计与回滚”的 HTTP 接口
+//Agent 每修改一次文件，系统会生成一条 CodePatchEntity 记录，包含：
+//哪次运行、哪个会话产生的修改
+//修改了哪个文件
+//增加、删除了多少行
+//当前审批状态
+//创建时间
+//Agent 修改文件
+//    ↓
+//生成 Patch 审计记录
+//    ↓
+//用户查看修改
+//    ├─ approve：接受修改
+//    ├─ reject：拒绝并回滚
+//    └─ rollback：直接回滚
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/patch")
@@ -20,6 +35,7 @@ public class CodePatchController {
     @Resource
     private CodePatchAuditService codePatchAuditService;
 
+    //查询单条修改记录
     @GetMapping("/{patchId}")
     public Response<PatchResponse> queryPatch(@PathVariable String patchId) {
         CodePatchEntity entity = codePatchAuditService.findById(patchId);
@@ -32,6 +48,7 @@ public class CodePatchController {
         return success(toResponse(entity));
     }
 
+    //查询某次 Agent 运行产生的全部修改
     @GetMapping("/run/{runId}")
     public Response<List<PatchResponse>> queryByRun(@PathVariable String runId) {
         List<PatchResponse> patches = codePatchAuditService.findByRunId(runId)
@@ -39,6 +56,7 @@ public class CodePatchController {
         return success(patches);
     }
 
+    //查询某个会话的修改历史
     @GetMapping("/session/{sessionId}")
     public Response<List<PatchResponse>> queryBySession(
             @PathVariable String sessionId,
@@ -48,6 +66,7 @@ public class CodePatchController {
         return success(patches);
     }
 
+    //询尚未审批的修改
     @GetMapping("/session/{sessionId}/unapproved")
     public Response<List<PatchResponse>> queryUnapproved(
             @PathVariable String sessionId,
@@ -57,6 +76,7 @@ public class CodePatchController {
         return success(patches);
     }
 
+    //回滚单次文件修改
     @PostMapping("/{patchId}/rollback")
     public Response<String> rollback(@PathVariable String patchId) {
         boolean success = codePatchAuditService.rollbackPatch(patchId);
@@ -67,6 +87,7 @@ public class CodePatchController {
                 .build();
     }
 
+    //回滚某次运行的全部修改
     @PostMapping("/run/{runId}/rollback")
     public Response<String> rollbackRun(@PathVariable String runId) {
         int rolled = codePatchAuditService.rollbackRun(runId);
@@ -77,12 +98,14 @@ public class CodePatchController {
                 .build();
     }
 
+    //确认并接受修改
     @PostMapping("/{patchId}/approve")
     public Response<String> approve(@PathVariable String patchId) {
         codePatchAuditService.updateStatus(patchId, com.wangtao.domain.agent.model.valobj.patch.CodePatchStatus.APPROVED);
         return success("ok");
     }
 
+    //拒绝修改，并尝试回滚文件
     @PostMapping("/{patchId}/reject")
     public Response<String> reject(@PathVariable String patchId) {
         boolean rolled = codePatchAuditService.rollbackPatch(patchId);

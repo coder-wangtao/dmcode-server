@@ -77,10 +77,12 @@ public class TerminalSessionPort implements ITerminalSessionPort {
             channel.connect(5000);
 
             channels.put(sessionId, channel);
+            //读取服务器输出
             inputStreams.put(sessionId, in);
+            //向服务器发送输入
             outputStreams.put(sessionId, out);
-            outputBuffers.put(sessionId, new StringBuilder());
-            agentBuffers.put(sessionId, new StringBuilder());
+            outputBuffers.put(sessionId, new StringBuilder()); //终端输出：normal
+            agentBuffers.put(sessionId, new StringBuilder());  //终端输出：agent
             agentCaptureMode.put(sessionId, false);
             activeConnectionSession.put(connectionId, sessionId);
 
@@ -90,6 +92,8 @@ public class TerminalSessionPort implements ITerminalSessionPort {
             // 等待 Shell 首次输出到达 + 额外等待让 MOTD 完整积累
             // 然后消费缓冲区，作为 initialOutput 返回给前端
             // 这样前端不再依赖轮询获取初始输出，彻底解决"有时显示有时不显示"的问题
+            //SSH 连接建立后，不立即返回给前端，而是先等待服务器返回第一批终端输出，
+            // 再额外等待 200ms，尽可能保证前端拿到完整的初始终端内容。
             StringBuilder buffer = outputBuffers.get(sessionId);
             long waitDeadline = System.currentTimeMillis() + 3000; // 最多等 3s 等首数据
             try {
@@ -259,7 +263,8 @@ public class TerminalSessionPort implements ITerminalSessionPort {
      * SocketTimeoutException 时继续循环（不是真正的断连），
      * 只有 EOF（-1）或真正的 IOException 才退出
      */
-    //持续监听远程 Linux Shell 的输出，并将数据写入两个缓冲区。
+    // 为每个 SSH Shell 会话启动一个独立的后台读取线程，持续读取服务器返回的终端输出，
+    // 并将输出分别保存到普通输出缓冲区和 Agent 专用缓冲区中。
     private void startOutputReader(String sessionId, InputStream in) {
         readerAlive.put(sessionId, true);
         Thread reader = new Thread(() -> {

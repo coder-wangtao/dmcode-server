@@ -52,6 +52,7 @@ public class AgentServiceController implements IAgentService {
     // 会话绑定映射：chatSessionId → terminalSessionId（原 SshAgentController 迁入）
     private final Map<String, String> sessionBindings = new ConcurrentHashMap<>();
 
+    //TODO:OK
     @RequestMapping(value = "query_ai_agent_config_list", method = RequestMethod.GET)
     @Override
     public Response<List<AiAgentConfigResponseDTO>> queryAiAgentConfigList() {
@@ -89,6 +90,7 @@ public class AgentServiceController implements IAgentService {
         }
     }
 
+    //TODO:OK
     @RequestMapping(value = "create_session", method = RequestMethod.POST)
     @Override
     public Response<CreateSessionResponseDTO> createSession(@RequestBody CreateSessionRequestDTO requestDTO) {
@@ -119,6 +121,7 @@ public class AgentServiceController implements IAgentService {
         }
     }
 
+    //TODO:OK
     @RequestMapping(value = "create_session", method = RequestMethod.GET)
     public Response<CreateSessionResponseDTO> createSession(@RequestParam("agentId") String agentId, @RequestParam("userId") String userId) {
         CreateSessionRequestDTO requestDTO = new CreateSessionRequestDTO();
@@ -166,6 +169,7 @@ public class AgentServiceController implements IAgentService {
     //  SSH 终端绑定 API（原 SshAgentController 合入）
     // ═══════════════════════════════════════════════════════════════
 
+    //TODO:OK
     @RequestMapping(value = "bind_terminal", method = RequestMethod.POST)
     public Response<BindTerminalResponseDTO> bindTerminal(@RequestBody BindTerminalRequestDTO requestDTO) {
         try {
@@ -211,6 +215,7 @@ public class AgentServiceController implements IAgentService {
         }
     }
 
+    //TODO:OK
     @RequestMapping(value = "unbind_terminal", method = RequestMethod.POST)
     public Response<Void> unbindTerminal(@RequestParam("chatSessionId") String chatSessionId) {
         try {
@@ -231,6 +236,7 @@ public class AgentServiceController implements IAgentService {
         }
     }
 
+    //TODO:OK
     @RequestMapping(value = "query_binding", method = RequestMethod.GET)
     public Response<BindTerminalResponseDTO> queryBinding(@RequestParam("chatSessionId") String chatSessionId) {
         try {
@@ -296,6 +302,7 @@ public class AgentServiceController implements IAgentService {
      * @param result 指令执行结果
      * @return 处理状态
      */
+    //TODO:OK
     @RequestMapping(value = "tool_result", method = RequestMethod.POST)
     public Response<Void> receiveToolResult(@RequestBody CommandResult result) {
         try {
@@ -331,6 +338,7 @@ public class AgentServiceController implements IAgentService {
      * @param cmdId 指令 ID
      * @return 缓存的执行结果，未就绪返回 null
      */
+    //TODO:OK
     @RequestMapping(value = "tool_result/pending", method = RequestMethod.GET)
     public Response<CommandResult> pollToolResult(@RequestParam("cmdId") String cmdId) {
         try {
@@ -360,6 +368,7 @@ public class AgentServiceController implements IAgentService {
      *
      * @return 所有缓存的结果（cmdId → CommandResult）
      */
+    //TODO:OK
     @RequestMapping(value = "tool_result/pending_all", method = RequestMethod.GET)
     public Response<Map<String, CommandResult>> pollAllToolResults() {
         try {
@@ -386,6 +395,7 @@ public class AgentServiceController implements IAgentService {
      *
      * @return 分发器状态信息
      */
+    //TODO:OK
     @RequestMapping(value = "command_status", method = RequestMethod.GET)
     public Response<Map<String, Object>> getCommandStatus() {
         Map<String, Object> status = Map.of(
@@ -428,6 +438,7 @@ public class AgentServiceController implements IAgentService {
         }
     }
 
+    //TODO:OK
     @RequestMapping(value = "agent_run/{runId}", method = RequestMethod.GET)
     @Override
     public Response<AgentRunResponseDTO> queryAgentRun(@PathVariable("runId") String runId) {
@@ -449,6 +460,7 @@ public class AgentServiceController implements IAgentService {
         }
     }
 
+    //TODO:OK
     @RequestMapping(value = "agent_run/session/{sessionId}", method = RequestMethod.GET)
     @Override
     public Response<List<AgentRunResponseDTO>> queryAgentRunsBySession(
@@ -469,6 +481,7 @@ public class AgentServiceController implements IAgentService {
         }
     }
 
+    //TODO:OK
     @RequestMapping(value = "agent_run/session/{sessionId}/resumable", method = RequestMethod.GET)
     public Response<AgentRunResponseDTO> queryResumableRun(@PathVariable("sessionId") String sessionId) {
         try {
@@ -496,6 +509,7 @@ public class AgentServiceController implements IAgentService {
         }
     }
 
+    //TODO:OK
     @RequestMapping(value = "agent_run/{runId}/resume_context", method = RequestMethod.GET)
     public Response<RunResumeResponseDTO> queryRunResumeContext(@PathVariable("runId") String runId) {
         try {

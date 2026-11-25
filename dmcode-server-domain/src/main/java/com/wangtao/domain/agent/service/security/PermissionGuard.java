@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Set;
 import java.util.regex.Pattern;
-
+//TODO:在 Agent 真正执行工具之前，判断这条命令是否安全，以及是否需要用户确认。
 /**
  * 权限守卫（五层递进安全检查）
  * <p>对标 DaMaoCode permissionGuard.ts
@@ -26,8 +26,20 @@ import java.util.regex.Pattern;
  * 4. 拒绝兜底层：未知工具或无法解析的参数直接拒绝
  * 5. 断路器层：同一会话连续触发安全拒绝 → 自动降级
  *
- * @author 教学版-DaMaoCode
  */
+//Agent
+//  ↓
+//决定调用 SSH 工具
+//  ↓
+//          PermissionGuard.check()
+//  ↓
+//安全检查
+//  ├── DENY    → 拒绝执行
+//  ├── CONFIRM → 等待用户确认
+//  └── ALLOW   → 允许执行
+//  ↓
+//SSH 工具真正执行命令
+
 @Slf4j
 @Component
 public class PermissionGuard {
@@ -120,6 +132,7 @@ public class PermissionGuard {
     };
 
     /** 敏感文件路径（直接拒绝） */
+    //敏感文件路径
     private static final Pattern[] SENSITIVE_FILE_PATTERNS = {
             Pattern.compile("^/etc/(shadow|passwd|gshadow|group)$"),
             Pattern.compile("^/etc/ssh/"),
@@ -193,6 +206,7 @@ public class PermissionGuard {
                 sessionId, toolName, args != null && args.length() > 100 ? args.substring(0, 100) + "..." : args);
 
         // Layer 5: 断路器检查（先检查，防止已熔断的会话继续尝试）
+        //已经触发断路器，那么没有必要继续检查命令
         if (isCircuitBroken(sessionId)) {
             log.warn("断路器触发: session={} 连续拒绝已达阈值", sessionId);
             return PermissionDecision.deny("circuit_breaker",
@@ -464,7 +478,9 @@ public class PermissionGuard {
 
     private void recordDenial(String sessionId) {
         circuitBreakers.compute(sessionId, (key, state) -> {
+            //说明这个会话之前没有发生过安全拒绝 || 说明距离上次拒绝已经超过了 60 秒
             if (state == null || System.currentTimeMillis() - state.lastDenialTime > CIRCUIT_BREAKER_COOLDOWN_MS) {
+                //创建一个新的断路器状态
                 state = new CircuitBreakerState();
             }
             state.consecutiveDenials++;
