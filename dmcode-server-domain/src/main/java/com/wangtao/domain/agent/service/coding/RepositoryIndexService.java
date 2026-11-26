@@ -25,7 +25,7 @@ public class RepositoryIndexService {
 
     private static final List<String> EXCLUDED_DIRS = List.of(
             "node_modules", ".git", "target", "build", "dist", "__pycache__",
-            ".idea", ".vscode", "vendor", ".gradle", ".mvn", ".next", ".walicode"
+            ".idea", ".vscode", "vendor", ".gradle", ".mvn", ".next", ".dmcode"
     );
 
     private static final List<String> SOURCE_EXTENSIONS = List.of(

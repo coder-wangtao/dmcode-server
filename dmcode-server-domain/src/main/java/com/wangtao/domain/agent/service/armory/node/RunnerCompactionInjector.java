@@ -27,7 +27,7 @@ import java.util.Optional;
  * - tokenThreshold: token 超过阈值时也触发压缩
  * - eventRetentionSize: 压缩后保留最近 N 条事件
  *
- * @author walicode-java
+ * @author dmcode-java
  */
 @Slf4j
 public class RunnerCompactionInjector {

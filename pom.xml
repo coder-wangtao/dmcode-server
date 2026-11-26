@@ -181,33 +181,33 @@
             </dependency>
             <!-- 工程模块 -->
             <dependency>
-                <groupId>cn.bugstack.ai</groupId>
-                <artifactId>walicode-server-api</artifactId>
+                <groupId>com.wangtao</groupId>
+                <artifactId>dmcode-server-api</artifactId>
                 <version>1.0</version>
             </dependency>
             <dependency>
-                <groupId>cn.bugstack.ai</groupId>
-                <artifactId>walicode-server-domain</artifactId>
+                <groupId>com.wangtao</groupId>
+                <artifactId>dmcode-server-domain</artifactId>
                 <version>1.0</version>
             </dependency>
             <dependency>
-                <groupId>cn.bugstack.ai</groupId>
-                <artifactId>walicode-server-infrastructure</artifactId>
+                <groupId>com.wangtao</groupId>
+                <artifactId>dmcode-server-infrastructure</artifactId>
                 <version>1.0</version>
             </dependency>
             <dependency>
-                <groupId>cn.bugstack.ai</groupId>
-                <artifactId>walicode-server-case</artifactId>
+                <groupId>com.wangtao</groupId>
+                <artifactId>dmcode-server-case</artifactId>
                 <version>1.0</version>
             </dependency>
             <dependency>
-                <groupId>cn.bugstack.ai</groupId>
-                <artifactId>walicode-server-types</artifactId>
+                <groupId>com.wangtao</groupId>
+                <artifactId>dmcode-server-types</artifactId>
                 <version>1.0</version>
             </dependency>
             <dependency>
-                <groupId>cn.bugstack.ai</groupId>
-                <artifactId>walicode-server-trigger</artifactId>
+                <groupId>com.wangtao</groupId>
+                <artifactId>dmcode-server-trigger</artifactId>
                 <version>1.0</version>
             </dependency>
         </dependencies>

@@ -15,7 +15,7 @@ public class WorkspaceContextProvider implements ContextProvider {
     private final Path workspace;
 
     public WorkspaceContextProvider(
-            @Value("${walicode.local.workspace:${user.home}}") String workspace) {
+            @Value("${dmcode.local.workspace:${user.home}}") String workspace) {
         this.workspace = Paths.get(workspace).toAbsolutePath().normalize();
     }
 

@@ -132,12 +132,14 @@ public class AiCallNode extends AbstractAIAgentReActSupport {
         // [Phase 2] 裁剪消息历史（token 预算从 agent 配置动态读取）
         // 注意：先裁剪再用于意图消解与上下文注入，避免超长会话撑爆 prompt
         int tokenBudget = dynamicContext.getContextTokenBudget() > 0 ? dynamicContext.getContextTokenBudget() : 8000;
+        //裁剪聊天历史
         List<Map<String, Object>> trimmedHistory = chatContextService.trimHistory(dynamicContext.getMessageHistory(), tokenBudget);
         dynamicContext.setMessageHistory(new ArrayList<>(trimmedHistory));
 
         // 4. 绑定终端会话 ID（ThreadLocal + ConcurrentHashMap 双通道）
         // ThreadLocal 在 ADK Runner RxJava 异步调度器线程上可能丢失，
         // ConcurrentHashMap sessionMapping 提供跨线程可靠查找
+        //TODO: 这里很重要 看一下
         String terminalSessionId = dynamicContext.getTerminalSessionId();
         String chatSessionId = dynamicContext.getSessionId();
         if (terminalSessionId != null && !terminalSessionId.isEmpty()) {

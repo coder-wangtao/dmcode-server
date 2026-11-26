@@ -17,7 +17,7 @@ class CodePatchServiceTests {
 
     @Test
     void writeWithBackupCreatesDiffAndBackup() throws IOException {
-        Path file = Files.createTempFile("walicode", ".txt");
+        Path file = Files.createTempFile("dmcode", ".txt");
         Files.writeString(file, "line-1\n");
 
         CodePatchService.CodePatchResult result =
@@ -31,7 +31,7 @@ class CodePatchServiceTests {
 
     @Test
     void rollbackRestoresOriginalContent() throws IOException {
-        Path file = Files.createTempFile("walicode", ".txt");
+        Path file = Files.createTempFile("dmcode", ".txt");
         Files.writeString(file, "before\n");
         CodePatchService.CodePatchResult result =
                 codePatchService.writeWithBackup(file, "after\n");

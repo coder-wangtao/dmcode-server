@@ -81,7 +81,7 @@ public class AgentNode extends AbstractArmorySupport {
                 log.error("创建 SSH ADK 工具失败", e);
             }
 
-            // 添加本地命令执行工具（通过 Tauri HTTP Server 调用本地 Shell）
+            // 添加本地命令执行工具（通过 Tauri HTTP Server 调用本地 Shell）“本地”指运行 Tauri 客户端的用户电脑
             try {
                 Method localMethod = LocalExecuteAdkTool.class.getMethod("executeLocalCommand", String.class);
                 FunctionTool localExecTool = FunctionTool.create(localExecuteAdkTool, localMethod);

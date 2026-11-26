@@ -21,7 +21,7 @@ public class CodePatchService {
 
         if (Files.exists(target)) {
             originalContent = Files.readString(target, StandardCharsets.UTF_8);
-            backupPath = target.resolveSibling("." + target.getFileName() + ".walicode."
+            backupPath = target.resolveSibling("." + target.getFileName() + ".dmcode."
                     + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS")) + ".bak");
             Files.writeString(backupPath, originalContent, StandardCharsets.UTF_8);
         }
@@ -31,7 +31,7 @@ public class CodePatchService {
             Files.createDirectories(parent);
         }
 
-        Path temporaryFile = Files.createTempFile(parent, target.getFileName().toString(), ".walicode.tmp");
+        Path temporaryFile = Files.createTempFile(parent, target.getFileName().toString(), ".dmcode.tmp");
         Files.writeString(temporaryFile, content == null ? "" : content, StandardCharsets.UTF_8);
         try {
             Files.move(temporaryFile, target, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE);

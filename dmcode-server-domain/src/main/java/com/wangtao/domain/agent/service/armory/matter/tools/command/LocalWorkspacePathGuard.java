@@ -13,7 +13,7 @@ public class LocalWorkspacePathGuard implements WorkspacePathGuard {
 
     private final Path workspace;
 
-    public LocalWorkspacePathGuard(@Value("${walicode.local.workspace:${user.home}}") String workspace) {
+    public LocalWorkspacePathGuard(@Value("${dmcode.local.workspace:${user.home}}") String workspace) {
         this.workspace = Paths.get(workspace).toAbsolutePath().normalize();
     }
 

@@ -41,7 +41,7 @@ public class PostEditVerificationService {
             ProcessBuilder pb = new ProcessBuilder(plan.commands())
                     .directory(root.toFile())
                     .redirectErrorStream(true);
-            pb.environment().putIfAbsent("WALICODE_WORKSPACE", projectRootPath);
+            pb.environment().putIfAbsent("DMCODE_WORKSPACE", projectRootPath);
 
             Process process = pb.start();
             List<String> outputLines = new ArrayList<>();

@@ -20,7 +20,7 @@ public class LocalProcessCommandExecutor implements LocalCommandExecutor {
     private final String workspace;
     private final boolean windows;
 
-    public LocalProcessCommandExecutor(@Value("${walicode.local.workspace:${user.home}}") String workspace) {
+    public LocalProcessCommandExecutor(@Value("${dmcode.local.workspace:${user.home}}") String workspace) {
         this.workspace = Path.of(workspace).toAbsolutePath().normalize().toString();
         this.windows = System.getProperty("os.name", "").toLowerCase().contains("windows");
     }
@@ -41,7 +41,7 @@ public class LocalProcessCommandExecutor implements LocalCommandExecutor {
             );
             processBuilder.directory(workingDirectory.toFile());
             processBuilder.redirectErrorStream(true);
-            processBuilder.environment().putIfAbsent("WALICODE_WORKSPACE", activeWorkspace.toString());
+            processBuilder.environment().putIfAbsent("DMCODE_WORKSPACE", activeWorkspace.toString());
 
             Process process = processBuilder.start();
             StringBuilder output = new StringBuilder();
